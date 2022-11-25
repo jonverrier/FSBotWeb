@@ -1,0 +1,7 @@
+*.config
+*.manifest
+*.testlog
+*.log
+.vs/*
+
+
