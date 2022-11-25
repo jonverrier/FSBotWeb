@@ -3,5 +3,6 @@
 *.testlog
 *.log
 .vs/*
+.github/*
 
 
