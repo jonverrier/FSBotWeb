@@ -3,6 +3,7 @@
 *.testlog
 *.log
 .vs/*
-.github/*
+node_modules/*
+dist/*
 
 
