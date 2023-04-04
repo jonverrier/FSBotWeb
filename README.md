@@ -10,7 +10,7 @@
 UltraBox creates tools to help boutique gym operators create engaging online experiences for their members. 
 
 Work in progress:
-- Video / photo tools - FX-style reels for promotional use in Insta, Tiktok, or wherever you meet your members online. 
+- Whiteboard - an online version of the whiteboard in your Box, but extra. 
 - Analytics - processing your members workout data to show trends  
 - Services - support for installing & operating billing & scheduling systems. 
 
