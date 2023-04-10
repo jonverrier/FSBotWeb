@@ -43,15 +43,10 @@ COMIC = { version: 0.96 };
 
    var rand = mulberry32(0);
 
-   function reseed(x1, y1, x2, y2) {
-      // we re-seed based on x-y coords to give consistent values when a line starts or ends at the same point. 
-      hash1 = (y1 << 16) ^ x1;
-      hash2 = (y2 << 16) ^ x2;
+   function reseed(seed) {
 
-      rand = mulberry32(hash1 + hash2);
+      rand = mulberry32(seed);
    }
-
-
 
 /**
  * @var object global "C" object
@@ -558,8 +553,6 @@ var bindTo = function(libName, lib) {
      */
    var cLine = function (x0, y0, x1, y1) {
 
-      reseed(x0, y0);
-
         /**
          * Estimate the movement of the arm
          * Reuses 3rd param from last call if omitted
@@ -609,7 +602,56 @@ var bindTo = function(libName, lib) {
         return this;
     }
 
+   // ============
+   // Begin Stable functiion implementations
+   // ============
+
+   /**
+    * WRAPPER for real, private "cLine"
+    * Draw a comic style / hand drawn line
+    *
+    * @param seed - value to re-seed random number sequence. Same seed will draw the same line each time. 
+    * @param x0 x start
+    * @param y0 y start
+    * @param x1 x end
+    * @param y1 y end
+    * @return native library object
+    */
+   lib.cStableLine = function (seed, x0, y0, x1, y1) {
+      reseed(seed);
+
+      begin.call(this);
+      cLine.call(this, x0, y0, x1, y1);
+      return finish.call(this);
+   }
+
+   /**
+    * WRAPPER for real, private "cRect"
+    * Draw a comic style / hand drawn rectangle using line function
+    *
+    * @param seed - value to re-seed random number sequence. Same seed will draw the same line each time.    
+    * @param x0 x upper left corcer
+    * @param y0 y upper left corner
+    * @param width width of the rectangle
+    * @param height height of the rectangle
+    * @param rh horizontal radius of rounded corners
+    * @param rv vertical radius of rounded corners
+    * @return native library object
+    */
+   lib.cStableRect = function (seed, x0, y0, width, height, rh, rv) {
+      reseed(seed);
+
+      begin.call(this);
+      cRect.call(this, x0, y0, width, height, rh, rv);
+      return finish.call(this);
+   }
+
+   // ============
+   // End of Stable functiion implementations
+   // ============
+
     /**
+     * 
      * Smart function for digesting input given to "magic" function.
      * It looks for valid drawing elements, svg & g, and tries to find
      * them in SVGDocument, Node and in direct children and parent
