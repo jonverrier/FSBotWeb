@@ -7,7 +7,7 @@
       "name": "TXP Co Ltd"
    },
    "scripts": {
-      "build-package": "webpack-cli --config webpack-config.js && copy dist\\main.pack.js public\\assets\\js && copy dist\\main.pack.js.map public\\assets\\js"
+      "build-package": "webpack-cli --config webpack-config.js && copy dist\\main.min.pack.js public\\assets\\js && copy dist\\main.min.pack.js.map public\\assets\\js"
    },
    "devDependencies": {
       "webpack": "^5.65.0",
