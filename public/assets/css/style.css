@@ -532,8 +532,9 @@ section {
 }
 
 #about .about-container .background {
+  border: 0px solid white;
   min-height: 300px;
-  background: url(../img/coach.jpg) center top no-repeat;
+  background: url(../img/braid-sq-512x512.jpg) center top no-repeat;
   margin-bottom: 10px;
 }
 

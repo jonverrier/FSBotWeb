@@ -1,17 +1,17 @@
 {
-   "name": "ultrabox",
+   "name": "fsbotweb",
    "version": "0.0.0",
-   "description": "UltraBox",
+   "description": "fsbotweb",
    "main": "src\\main.js",
    "author": {
-      "name": "TXP Co Ltd"
+      "name": "Jon Verrier"
    },
    "scripts": {
       "build-package": "webpack-cli --config webpack-config.js && copy dist\\main.min.pack.js public\\assets\\js && copy dist\\main.min.pack.js.map public\\assets\\js"
    },
    "devDependencies": {
-      "webpack": "^5.65.0",
-      "webpack-cli": "^5.0.1"
+      "webpack": "^5.89.0",
+      "webpack-cli": "^5.1.4"
    },
    "dependencies": {
    }
