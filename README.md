@@ -1,18 +1,12 @@
-# UltraBox
+# FS Bot web
 
-## UltraBox - Table of Contents
+## FS Bot web- Table of Contents
 * [General info](#general-info)
-* [Modules](#modules)
 * [Technologies](#technologies)
 * [Licence](#licence)
 
 ## General info
-UltraBox creates tools to help boutique gym operators create engaging online experiences for their members. 
-
-Work in progress:
-- Whiteboard - an online version of the whiteboard in your Box, but extra. 
-- Analytics - processing your members workout data to show trends  
-- Services - support for installing & operating billing & scheduling systems. 
+A front end to the FSBot app - multi-user acces to a GPT prompt, shared between example customer & customer service agent. 
 
 ## Technologies 
 Bootstrap
