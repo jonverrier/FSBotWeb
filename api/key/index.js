@@ -8,5 +8,11 @@ module.exports = async function (context, req) {
          body: process.env.ApiKey
       };
    }
+else {
+    context.res = {
+        /* Defaults to status 200 */
+        body: "Error"
+     };    
+}
 
 }
