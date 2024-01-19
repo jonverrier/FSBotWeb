@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
 else {
     context.res = {
         /* Defaults to status 200 */
-        body: "Error"
+        body: "Error:" + req.params.JoinKey
      };    
 }
 
