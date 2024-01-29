@@ -8,12 +8,12 @@ module.exports = async function (context, req) {
          body: process.env.ConversationKey
       };
    }
-else {
-    // Put this back when need to debug 
-    // context.res = {
-    //    /* Defaults to status 200 */
-    //    body: "Error:" + req.query.JoinKey
-    // };    
-}
+   else {
+      // Put this back when need to debug 
+       // context.res = {
+       //    /* Defaults to status 200 */
+       //    body: "Error:" + req.query.JoinKey
+       // };    
+   }
 
 }
