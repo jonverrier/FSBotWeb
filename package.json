@@ -10,9 +10,8 @@
       "build-package": "webpack-cli --config webpack-config.js && copy dist\\main.min.pack.js public\\assets\\js && copy dist\\main.min.pack.js.map public\\assets\\js"
    },
    "devDependencies": {
+      "@azure/static-web-apps-cli": "^1.1.6",
       "webpack": "^5.89.0",
       "webpack-cli": "^5.1.4"
-   },
-   "dependencies": {
    }
 }
