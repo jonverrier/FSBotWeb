@@ -6,7 +6,7 @@
 * [Licence](#licence)
 
 ## General info
-A front end to the FSBot app - multi-user acces to a GPT prompt, shared between example customer & customer service agent. 
+A front end to the @Braid app - multi-user acces to a GPT prompt, shared between example customer & customer service agent. 
 
 ## Technologies 
 Bootstrap
