@@ -1,7 +1,7 @@
 {
-   "name": "fsbotweb",
+   "name": "aibotweb",
    "version": "0.0.0",
-   "description": "fsbotweb",
+   "description": "aibotweb",
    "main": "src\\main.js",
    "author": {
       "name": "Jon Verrier"
