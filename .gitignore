@@ -5,6 +5,7 @@
 .vs/*
 node_modules/*
 api/login/node_modules/*
+api/auth/node_modules/*
 dist/*
 
 
