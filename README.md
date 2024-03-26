@@ -17,7 +17,7 @@ The benefits of this approach are:
 - Students get a flavour of what is possible with modern AI by using the tools. 
 
 ## Technologies 
-This webset is written in Bootstrap https://getbootstrap.com/. 
+This website is written in HTML5 and Bootstrap https://getbootstrap.com/. 
 
 ## Licence
 GNU AFFERO GENERAL PUBLIC LICENSE.
