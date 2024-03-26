@@ -1,7 +1,7 @@
 
 
 // Make the GET request using the async/await syntax
-async function redirectToLoginWithLinkedIn(req, res) {
+async function redirectToLoginWithLinkedIn(context, req, res) {
 
    // Basic securoty check on JoinKey
    var path = req.query.joinpath;
@@ -14,12 +14,23 @@ async function redirectToLoginWithLinkedIn(req, res) {
       var state = JSON.stringify (req.query);
       var redirect = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=" + clientID + "&redirect_uri=" + redirectUrl + "&scope=" + scope + "&state=" + state;
 
-      res.redirect (redirect);
+      if (res) {
+         res.redirect (redirect);
+      } 
+      else {
+         context.res = {
+            status: 302,
+            headers: {
+                'Location': redirect
+            },
+            body: 'Redirecting...'
+        };         
+      }
    }
 }
 
  
-module.exports = async function (context, req) {
+module.exports = async function (context, req, res) {
 
-   await redirectToLoginWithLinkedIn (req, context.res);
+   await redirectToLoginWithLinkedIn (context, req, res);
 }

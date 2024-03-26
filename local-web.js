@@ -21,17 +21,13 @@ app.get('/api/aikey', function routeHandler(req, res) {
 
 
 app.get('/api/login', function routeHandler(req, res) {
-    var mock = {};
-    mock.res = res;
 
-    login (mock, req);
+    login (null, req, res);
 });
 
 app.get('/api/auth', function routeHandler(req, res) {
-    var mock = {};
-    mock.res = res;
 
-    auth (mock, req);
+    auth (null, req, res);
 });
 
 app.use('/', express.static('./public'));

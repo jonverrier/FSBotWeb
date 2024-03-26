@@ -3,7 +3,7 @@
 const axios = require('axios');
 const qs = require('qs');
 
-async function redirectWithEmail (code, joinpath, res) {
+async function redirectWithEmail (code, joinpath, context, res) {
 
   try {
 
@@ -45,7 +45,18 @@ async function redirectWithEmail (code, joinpath, res) {
 
      var redirect = "/aibot.html#&joinpath=" + joinpath + "&email=" + profileRes.data.email;
 
-     res.redirect (redirect);     
+     if (res) {
+        res.redirect (redirect);
+     } 
+     else {
+        context.res = {
+           status: 302,
+           headers: {
+             'Location': redirect
+           },
+           body: 'Redirecting...'
+        };         
+      }   
 
   } catch (err) {
 
@@ -54,18 +65,12 @@ async function redirectWithEmail (code, joinpath, res) {
 
 }
 
-module.exports = async function (context, req) {   
-
-   console.log ("req.query.state:");   
-   console.log (req.query.state);
+module.exports = async function (context, req, res) {   
 
    var parsed = JSON.parse (req.query.state);
 
-   console.log ("Parsed:");   
-   console.log (parsed);
-
    if (parsed.joinpath.startsWith (process.env.JoinKey) && req.query.code) {
 
-      var name = await redirectWithEmail (req.query.code, parsed.joinpath, context.res);
+      var name = await redirectWithEmail (req.query.code, parsed.joinpath, context, res);
    }
 }
