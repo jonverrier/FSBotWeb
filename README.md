@@ -17,7 +17,7 @@ The benefits of this approach are:
 - Students get a flavour of what is possible with modern AI by using the tools. 
 
 ## Technologies 
-This website is written in HTML5 and Bootstrap https://getbootstrap.com/. 
+This website is written in HTML5 and Bootstrap (https://getbootstrap.com/). Azure functions are used at runtime, using node.js (https://nodejs.org/en/download/). As far as possible, these are very 'thin' functions - its quite hard to debug. All complex logic we try to move to the front end where it can more easily be unit tested, debugged etc. 
 
 ## Licence
 GNU AFFERO GENERAL PUBLIC LICENSE.
