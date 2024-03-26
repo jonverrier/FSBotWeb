@@ -9,7 +9,7 @@ async function redirectToLoginWithLinkedIn(context, req, res) {
 
       // https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?context=linkedin%2Fcontext&tabs=HTTPS1
       var clientID = "78xh72q2fcu5wv";
-      var redirectUrl = "http://localhost:1337/api/auth/";
+      var redirectUrl = res ? "http://localhost:1337/api/auth/" : "http://braidapps.io/api/auth/";
       var scope = 'openid profile email';
       var state = JSON.stringify (req.query);
       var redirect = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=" + clientID + "&redirect_uri=" + redirectUrl + "&scope=" + scope + "&state=" + state;
