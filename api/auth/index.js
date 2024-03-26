@@ -3,7 +3,7 @@
 const axios = require('axios');
 const qs = require('qs');
 
-async function getLinkedInUserName (code, state) {
+async function redirectWithEmail (code, joinpath, res) {
 
   try {
 
@@ -31,9 +31,7 @@ async function getLinkedInUserName (code, state) {
      };
 
      const accessRes = await axios.post('https://www.linkedin.com/oauth/v2/accessToken', qs.stringify(data), accessConfig);
-     
-     console.log ("Access:");     
-     console.log (accessRes.data);     
+        
      var access_token = accessRes.data.access_token;     
 
      const profileConfig = {
@@ -45,8 +43,9 @@ async function getLinkedInUserName (code, state) {
 
      const profileRes = await axios.get(' https://api.linkedin.com/v2/userinfo', profileConfig);
 
-     console.log ("Profile:");
-     console.log (profileRes.data);
+     var redirect = "/aibot.html#&joinpath=" + joinpath + "&email=" + profileRes.data.email;
+
+     res.redirect (redirect);     
 
   } catch (err) {
 
@@ -55,21 +54,18 @@ async function getLinkedInUserName (code, state) {
 
 }
 
-module.exports = async function (context, req) {
+module.exports = async function (context, req) {   
 
+   console.log ("req.query.state:");   
    console.log (req.query.state);
-   console.log (req.query.code);
 
-   if (req.query.error_description)
-      console.log (req.query.error_description);    
+   var parsed = JSON.parse (req.query.state);
 
-   if (req.query.state == process.env.JoinKey && req.query.code) {
+   console.log ("Parsed:");   
+   console.log (parsed);
 
-      var name = await getLinkedInUserName (req.query.code, req.query.state).then ((name))
+   if (parsed.joinpath.startsWith (process.env.JoinKey) && req.query.code) {
 
-      context.res = {
-         /* Defaults to status 200 */
-      };
-
+      var name = await redirectWithEmail (req.query.code, parsed.joinpath, context.res);
    }
 }
