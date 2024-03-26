@@ -20,7 +20,7 @@ async function redirectWithEmail (code, joinpath, context, res) {
     // client_secret	string	The Secret Key value generated in Step 1. See the Best Practices Guide for ways to keep your client_secret value secure.	Yes
     // redirect_uri	url	The same redirect_uri value that you passed in the previous step.	Yes
      var clientID = "78xh72q2fcu5wv";
-     var redirectUrl = res ? "http://localhost:1337/api/auth/" : "http://braidapps.io/api/auth/";
+     var redirectUrl = res ? "http://localhost:1337/api/auth/" : "https://braidapps.io/api/auth/";
 
      var data = {
         grant_type : 'authorization_code',
