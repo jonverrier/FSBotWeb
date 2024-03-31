@@ -9,16 +9,24 @@ var app = express();
 
 app.get('/api/joinkey', function routeHandler(req, res) {
     if (req.query.JoinKey == process.env.JoinKey) {    
+       console.log (process.env.JoinKey);
        res.send(process.env.JoinKey);
     }
 });
 
 app.get('/api/aikey', function routeHandler(req, res) {
     if (req.query.JoinKey == process.env.JoinKey) {     
+       console.log (process.env.OpenAiKey);        
        res.send(process.env.OpenAiKey);
     }
 });
 
+app.get('/api/dbkey', function routeHandler(req, res) {
+    if (req.query.JoinKey == process.env.JoinKey) {  
+       console.log (process.env.MongoApiKey);      
+       res.send(process.env.MongoApiKey);
+    }
+});
 
 app.get('/api/login', function routeHandler(req, res) {
 
