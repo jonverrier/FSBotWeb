@@ -1,10 +1,10 @@
 module.exports = {
    devtool: 'source-map',
    entry: "./src/main.js",
-   mode: "production",
+   mode: "development",
    target: 'web',
    output: {
-      filename: "main.min.pack.js",
+      filename: "main.pack.js",
       devtoolModuleFilenameTemplate: '[resource-path]',  // removes the webpack:/// prefix
       libraryTarget: 'window'
    },
