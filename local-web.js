@@ -4,6 +4,7 @@ var express = require("express");
 
 var login = require("./api/login/index");
 var auth = require("./api/auth/index");
+var dbkey = require("./api/dbkey/index");
 
 var app = express();
 
@@ -22,10 +23,8 @@ app.get('/api/aikey', function routeHandler(req, res) {
 });
 
 app.get('/api/dbkey', function routeHandler(req, res) {
-    if (req.query.JoinKey == process.env.JoinKey) {  
-       console.log (process.env.MongoApiKey);      
-       res.send(process.env.MongoApiKey);
-    }
+
+    dbkey (null, req, res);    
 });
 
 app.get('/api/login', function routeHandler(req, res) {
