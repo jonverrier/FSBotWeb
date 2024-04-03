@@ -61,8 +61,16 @@ async function redirectWithEmail (code, joinpath, context, res) {
   } catch (err) {
 
      console.error(err);
+     if (res) {
+      res = {
+         status: 400
+      };
+    } else {
+       context.res = {
+         status: 400
+       };
+   }       
   }
-
 }
 
 module.exports = async function (context, req, res) {   
@@ -71,6 +79,16 @@ module.exports = async function (context, req, res) {
 
    if (parsed.joinpath.startsWith (process.env.JoinKey) && req.query.code) {
 
-      var name = await redirectWithEmail (req.query.code, parsed.joinpath, context, res);
+      await redirectWithEmail (req.query.code, parsed.joinpath, context, res);
+   } else {
+      if (res) {
+         res = {
+            status: 400
+         };
+       } else {
+          context.res = {
+            status: 400
+          };
+      }        
    }
 }
