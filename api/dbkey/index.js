@@ -5,7 +5,7 @@ const qs = require('qs');
 
 async function requestKey (context, res) {
    
-   var key = process.env.MongoAPiKey;
+   var key = process.env.MongoApiKey;
 
    const accessConfig = {
       headers: {
