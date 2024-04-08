@@ -3,7 +3,7 @@
 const axios = require('axios');
 const qs = require('qs');
 
-async function redirectWithEmail (code, joinpath, context, res) {
+async function redirectWithEmail (code, session, conversation, context, res) {
 
   try {
 
@@ -43,7 +43,7 @@ async function redirectWithEmail (code, joinpath, context, res) {
 
      const profileRes = await axios.get(' https://api.linkedin.com/v2/userinfo', profileConfig);
 
-     var redirect = "/aibot.html#&joinpath=" + joinpath + "&email=" + profileRes.data.email;
+     var redirect = "/aibot.html#&session=" + session + "&conversation=" + conversation + "&email=" + profileRes.data.email;
 
      if (res) {
         res.redirect (redirect);
@@ -77,9 +77,9 @@ module.exports = async function (context, req, res) {
 
    var parsed = JSON.parse (req.query.state);
 
-   if (parsed.joinpath.startsWith (process.env.JoinKey) && req.query.code) {
+   if (parsed.session.startsWith (process.env.JoinKey) && req.query.code) {
 
-      await redirectWithEmail (req.query.code, parsed.joinpath, context, res);
+      await redirectWithEmail (req.query.code, parsed.session, parsed.conversation, context, res);
    } else {
       if (res) {
          res = {

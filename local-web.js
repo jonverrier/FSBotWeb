@@ -9,15 +9,13 @@ var dbkey = require("./api/dbkey/index");
 var app = express();
 
 app.get('/api/joinkey', function routeHandler(req, res) {
-    if (req.query.JoinKey == process.env.JoinKey) {    
-       console.log (process.env.JoinKey);
+    if (req.query.session == process.env.JoinKey) {    
        res.send(process.env.JoinKey);
     }
 });
 
 app.get('/api/aikey', function routeHandler(req, res) {
-    if (req.query.JoinKey == process.env.JoinKey) {     
-       console.log (process.env.OpenAiKey);        
+    if (req.query.session == process.env.JoinKey) {           
        res.send(process.env.OpenAiKey);
     }
 });
