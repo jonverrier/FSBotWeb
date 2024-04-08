@@ -33,7 +33,7 @@ async function requestKey (context, res) {
 
 module.exports = async function (context, req, res) {
 
-    if (req.query.JoinKey == process.env.JoinKey) {
+    if (req.query.session == process.env.JoinKey) {
        var key = await requestKey ();
 
        if (res) {
