@@ -2,7 +2,7 @@
 
 module.exports = async function (context, req) {
 
-   if (req.query.session == process.env.JoinKey) {
+   if (req.query.session == process.env.SessionKey) {
       context.res = {
          /* Defaults to status 200 */
          body: process.env.ConversationKey
@@ -12,7 +12,7 @@ module.exports = async function (context, req) {
       // Put this back when need to debug 
        // context.res = {
        //    /* Defaults to status 200 */
-       //    body: "Error:" + req.query.JoinKey
+       //    body: "Error:" + req.query.sessionKey
        // };    
    }
 

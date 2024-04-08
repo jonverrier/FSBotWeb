@@ -33,7 +33,7 @@ async function requestKey (context, res) {
 
 module.exports = async function (context, req, res) {
 
-    if (req.query.session == process.env.JoinKey) {
+    if (req.query.session == process.env.SessionKey) {
        var key = await requestKey ();
 
        if (res) {
@@ -46,7 +46,7 @@ module.exports = async function (context, req, res) {
       }
     }
     else {
-      console.error ("JoinKey validation failed.")
+      console.error ("SessionKey validation failed.")
       if (res) {
          res.send(undefined);   
        } else {
