@@ -5,18 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/local-web.js",        
+            "name": "Launch TS-node",
+            "type": "node",
             "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
+            "args": [
+                "${relativeFile}"
             ],
-            "type": "node"
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "cwd": "${workspaceRoot}",
+            "internalConsoleOptions": "openOnSessionStart",
+            "program": "${workspaceFolder}/local-web.ts"            
         },
         {
-            "name": "Attach",
-            "port": 9229,
-            "request": "attach",
+            "name": "Launch Node",
+            "program": "${workspaceFolder}/local-web.js",        
+            "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
             ],
