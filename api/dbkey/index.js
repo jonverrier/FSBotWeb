@@ -3,8 +3,40 @@
 const axios = require('axios');
 const qs = require('qs');
 
-async function requestKey (context, res) {
+module.exports = async function (context, req, res) {
+
+   var key = await dbCommonApi (req.query.session);
+
+   if (res) {
+      // Running locally, not in Azure
+      res.send (key);
+      return;
+   }
    
+   if (key) {
+      context.res = {
+         /* Defaults to status 200 */
+         body: key
+      };
+   }
+   else {
+      context.res = {
+         status: 400
+      };
+   }
+ }
+
+ // End of Azure plumbing 
+
+
+// All logic needs to be in here - so we can debug locally, then run on Azure
+async function dbCommonApi (sessionKey) {
+
+   if (sessionKey !== process.env.SessionKey) {
+      console.error ("Session key validation falied getting DB Key");
+      return undefined;
+   }
+
    var key = process.env.MongoApiKey;
 
    const accessConfig = {
@@ -28,32 +60,7 @@ async function requestKey (context, res) {
    }
    catch (e) {
       console.error (e);
-   }
+
+      return undefined;
+   }  
 }
-
-module.exports = async function (context, req, res) {
-
-    if (req.query.session == process.env.SessionKey) {
-       var key = await requestKey ();
-
-       if (res) {
-         res.send(key);         
-       } else {
-          context.res = {
-             /* Defaults to status 200 */
-             body: key
-          };
-      }
-    }
-    else {
-      console.error ("SessionKey validation failed.")
-      if (res) {
-         res.send(undefined);   
-       } else {
-          context.res = {
-            status: 400
-          };
-      }  
-    }
- 
- }

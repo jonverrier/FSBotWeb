@@ -6,7 +6,7 @@ var login = require("./api/login/index");
 var auth = require("./api/auth/index");
 var dbkey = require("./api/dbkey/index");
 
-import { messageLocalApi } from './api/message/message';
+import { messageLocalApi } from './api/message/index';
 
 var app = express();
 
@@ -24,7 +24,7 @@ app.get('/api/aikey', function routeHandler(req: any, res: any) {
 
 app.get('/api/dbkey', function routeHandler(req: any, res: any) {
 
-    dbkey (null, req, res);    
+    dbkey (null, req, res);   
 });
 
 app.get('/api/login', function routeHandler(req: any, res: any) {
@@ -39,6 +39,7 @@ app.get('/api/auth', function routeHandler(req: any, res: any) {
 
 app.get('/api/message', async function routeHandler(req: any, res: any) {
 
+    // Still cannot get this to work from azure - on hold for the moment. 
     let response = await messageLocalApi (req.query.session);
 
     res.send (response.body);
