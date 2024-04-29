@@ -4,7 +4,7 @@ var express = require("express");
 
 var login = require("./api/login/index");
 var auth = require("./api/auth/index");
-var dbkey = require("./api/dbkey/index");
+var dbkey = require("./api/mdbkey/index");
 
 import { messageLocalApi } from './api/message/index';
 
@@ -22,7 +22,7 @@ app.get('/api/aikey', function routeHandler(req: any, res: any) {
     }
 });
 
-app.get('/api/dbkey', function routeHandler(req: any, res: any) {
+app.get('/api/mdbkey', function routeHandler(req: any, res: any) {
 
     dbkey (null, req, res);   
 });
