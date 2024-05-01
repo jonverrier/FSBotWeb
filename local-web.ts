@@ -4,7 +4,8 @@ var express = require("express");
 
 var login = require("./api/login/index");
 var auth = require("./api/auth/index");
-var dbkey = require("./api/mdbkey/index");
+var mdbkey = require("./api/mdbkey/index");
+var cdbkey = require("./api/cdbkey/index");
 
 import { messageLocalApi } from './api/message/index';
 
@@ -22,19 +23,26 @@ app.get('/api/aikey', function routeHandler(req: any, res: any) {
     }
 });
 
-app.get('/api/mdbkey', function routeHandler(req: any, res: any) {
+app.get('/api/mdbkey', async function routeHandler(req: any, res: any) {
 
-    dbkey (null, req, res);   
+    await mdbkey (null, req, res);   
 });
 
-app.get('/api/login', function routeHandler(req: any, res: any) {
+app.get('/api/cdbkey',  function routeHandler(req: any, res: any) {
 
-    login (null, req, res);
+    if (req.query.session == process.env.SessionKey) {           
+        res.send(process.env.CosmosApiKey);
+     }
 });
 
-app.get('/api/auth', function routeHandler(req: any, res: any) {
+app.get('/api/login', async function routeHandler(req: any, res: any) {
 
-    auth (null, req, res);
+    await login (null, req, res);
+});
+
+app.get('/api/auth', async function routeHandler(req: any, res: any) {
+
+    await auth (null, req, res);
 });
 
 app.get('/api/message', async function routeHandler(req: any, res: any) {
