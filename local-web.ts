@@ -19,7 +19,7 @@ app.get('/api/joinkey', function routeHandler(req: any, res: any) {
 
 app.get('/api/aikey', function routeHandler(req: any, res: any) {
     if (req.query.session == process.env.SessionKey) {           
-       res.send(process.env.OpenAiKey);
+       res.send(process.env.AzureAiKey);
     }
 });
 
