@@ -18,7 +18,7 @@ module.exports = async function (context, req, res) {
    }
    else {
       context.res = {
-         status: 400
+         status: 500
       };
    }
  }

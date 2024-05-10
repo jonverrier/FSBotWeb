@@ -9,11 +9,10 @@ module.exports = async function (context, req) {
       };
    }
    else {
-      // Put this back when need to debug 
-       // context.res = {
-       //    /* Defaults to status 200 */
-       //    body: "Error:" + req.query.sessionKey
-       // };    
+      context.res = {
+         status: 500,
+         body: "Error, session key validation failed:" + req.query.sessionKey
+      }; 
    }
 
 }
