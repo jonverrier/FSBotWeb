@@ -832,7 +832,8 @@ section {
    width: 70px !important;
    overflow: hidden !important;
    transition: all 0.3s ease !important;
-   left: 4px !important;
+   right: 4px !important;
+   top: 4px !important;   
 }
 
 .grecaptcha-badge:hover {
