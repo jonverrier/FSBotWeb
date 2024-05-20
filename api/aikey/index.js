@@ -2,7 +2,7 @@
 
 module.exports = async function (context, req) {
 
-    if (req.query.session == process.env.SessionKey) {
+    if (req.query.session === process.env.SessionKey) {
        context.res = {
           /* Defaults to status 200 */
           body: process.env.AzureAiKey
@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
     else {
         context.res = {
            status: 500,
-           body: "Error, session key validation failed:" + req.query.sessionKey
+           body: "Error, session key validation failed:" + req.query.session
         };    
     }
  
