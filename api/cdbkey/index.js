@@ -29,7 +29,7 @@ module.exports = async function (context, req, res) {
 // All logic needs to be in here - so we can debug locally, then run on Azure
 async function dbCommonApi (sessionKey) {
 
-   if (sessionKey !== process.env.SessionKey) {
+   if ((sessionKey !== process.env.SessionKey) && (sessionKey !== process.env.SessionKey2)) {
       console.error ("Session key validation falied getting DB Key");
       return undefined;
    }

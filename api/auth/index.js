@@ -80,7 +80,9 @@ module.exports = async function (context, req, res) {
 
    var parsed = JSON.parse (req.query.state);
 
-   if (parsed.session.startsWith (process.env.SessionKey) && req.query.code) {
+
+   if ((parsed.session.startsWith (process.env.SessionKey)) || (parsed.session.startsWith (process.env.SessionKey2)) 
+        && req.query.code) {
 
       await redirectWithEmail (req.query.code, parsed.session, parsed.conversation, context, res);
    } else {
