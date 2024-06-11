@@ -5,7 +5,7 @@ async function redirectToLoginWithLinkedIn(context, req, res) {
 
    // Basic security check on sessionKey
    var path = req.query.session;
-   if (path.startsWith (process.env.SessionKey)) {
+   if (path.startsWith (process.env.SessionKey) || path.startsWith (process.env.SessionKey2)) {
 
       // https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?context=linkedin%2Fcontext&tabs=HTTPS1
       var clientID = "78xh72q2fcu5wv";

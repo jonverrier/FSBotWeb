@@ -2,7 +2,7 @@
 
 module.exports = async function (context, req) {
 
-   if (req.query.session == process.env.SessionKey) {
+   if ((req.query.session === process.env.SessionKey) || (req.query.session === process.env.SessionKey2)) {
       context.res = {
          /* Defaults to status 200 */
          body: process.env.ConversationKey
