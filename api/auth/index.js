@@ -3,7 +3,7 @@
 const axios = require('axios');
 const qs = require('qs');
 
-async function redirectWithEmail (code, session, conversation, context, res) {
+async function redirectWithEmail (code, session, conversation, secret, context, res) {
 
   try {
 
@@ -46,7 +46,8 @@ async function redirectWithEmail (code, session, conversation, context, res) {
      var redirect = "/aibot.html#&session=" + session + 
         "&conversation=" + conversation + 
         "&email=" + encodeURIComponent(profileRes.data.email) + 
-        "&name=" + encodeURIComponent(profileRes.data.name);
+        "&name=" + encodeURIComponent(profileRes.data.name) +
+        "&secret=" + encodeURIComponent(secret);
 
      if (res) {
         res.redirect (redirect);
@@ -84,7 +85,7 @@ module.exports = async function (context, req, res) {
    if ((parsed.session.startsWith (process.env.SessionKey)) || (parsed.session.startsWith (process.env.SessionKey2)) 
         && req.query.code) {
 
-      await redirectWithEmail (req.query.code, parsed.session, parsed.conversation, context, res);
+      await redirectWithEmail (req.query.code, parsed.session, parsed.conversation, parsed.secret, context, res);
    } else {
       if (res) {
          res = {
