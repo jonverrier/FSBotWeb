@@ -1,7 +1,7 @@
 {
   "name": "braidapi",
   "version": "1.0.0",
-  "description": "APIs for the @Braid app",
+  "description": "APIs for Braid's @BraBoxerid app",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
