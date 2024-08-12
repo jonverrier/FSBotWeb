@@ -1,10 +1,10 @@
 {
-  "name": "braidapi",
-  "version": "1.0.0",
-  "description": "APIs for Braid's @BraBoxerid app",
+  "name": "braidwebapi",
+  "version": "0.0.1",
+  "description": "APIs for Braid's @Boxer app",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "echo \"No build step required yet...\"",
+    "watch": "echo \"No build step required yet...\"",
     "clean": "rimraf dist",
     "prestart": "npm run clean && npm run build",
     "start": "func start",
