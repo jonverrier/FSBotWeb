@@ -4,32 +4,24 @@ var express = require("express");
 
 var login = require("./api/login/index");
 var auth = require("./api/auth/index");
-var cdbkey = require("./api/cdbkey/index");
+var fluidKey = require("./api/fluidkey/index");
+var aiKey = require("./api/aikey/index");
 
 var app = express();
 
-app.get('/api/joinkey', function routeHandler(req: any, res: any) {
-    console.log ('/api/joinkey');
-    if (req.query.session == process.env.SessionKey) {    
-       res.send(process.env.SessionKey);
-    } 
-    console.log ('/api/joinkey end');
+app.get('/api/fluidkey', async function routeHandler(req: any, res: any) {
+   
+   console.log ('/api/fluidkey');
+   if ((req.query.session === process.env.SessionKey) || (req.query.session === process.env.SessionKey2)) {
+      res.send (process.env.ConversationKey);
+   }
 });
 
-app.get('/api/aikey', function routeHandler(req: any, res: any) {
+app.get('/api/aikey', async function routeHandler(req: any, res: any) {
     console.log ('/api/aikey');    
-    if (req.query.session == process.env.SessionKey) {           
-       res.send(process.env.AzureAiKey);
+    if ((req.query.session === process.env.SessionKey) || (req.query.session === process.env.SessionKey2)) {
+       res.send (process.env.AzureAiKey);
     }
-});
-
-
-app.get('/api/cdbkey',  function routeHandler(req: any, res: any) {
-
-    console.log ('/api/cdbkey');
-    if (req.query.session == process.env.SessionKey) {           
-        res.send(process.env.CosmosApiKey);
-     }
 });
 
 app.get('/api/login', async function routeHandler(req: any, res: any) {
