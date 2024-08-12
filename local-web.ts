@@ -9,6 +9,8 @@ var aiKey = require("./api/aikey/index");
 
 var app = express();
 
+declare var process : any;
+
 app.get('/api/fluidkey', async function routeHandler(req: any, res: any) {
    
    console.log ('/api/fluidkey');
