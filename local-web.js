@@ -10,6 +10,7 @@ var aiKey = require("./api/aikey/index");
 >>>>>>> develop
 var app = express();
 
+<<<<<<< HEAD
 app.get('/api/fluidkey', async function routeHandler(req, res) {
    
    console.log ('/api/fluidkey');
@@ -26,6 +27,8 @@ app.get('/api/aikey', async function routeHandler(req, res) {
     }
 });
 
+=======
+>>>>>>> develop
 =======
 >>>>>>> develop
 app.use('/', express.static('./public'));
