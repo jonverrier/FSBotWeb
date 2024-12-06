@@ -5,4 +5,7 @@ var express = require("express");
 var app = express();
 
 app.use('/', express.static('./public'));
+
+console.log ('Listening on:' + port.toString());
+
 app.listen(port, host);
