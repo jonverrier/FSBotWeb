@@ -1,28 +1,32 @@
 {
-   "name": "aibotweb",
+   "name": "braidapps",
    "version": "0.0.0",
-   "description": "aibotweb",
+   "description": "braidapps",
    "main": "src\\main.js",
    "author": {
-      "name": "Jon Verrier"
+      "name": "Braid Technologies Ltd"
    },
    "scripts": {
-      "build-package": "webpack-cli --config webpack-config.js && copy dist\\main.pack.js public\\assets\\js && copy dist\\main.pack.js.map public\\assets\\js",
-      "local-server": "node ./local-web.js"      
+      "clean": "rimraf public/wfbr/static",
+      "build": "npm run compile && npm run pull",    
+      "pull": "bash -c 'mkdir -p public/wfbr/static/js && cp -v -r ../Braid/WaterfallBrowser/build/* public/wfbr && cp -v ../Braid/Boxer/dist/aibot.pack.js public/assets/js'",        
+      "compile": "bash -c 'webpack-cli --config webpack-config.js && cp -v dist/main.pack.js public/assets/js && cp -v dist/main.pack.js.map public/assets/js'",
+      "local-server": "node ./local-web.js"
    },
    "devDependencies": {
       "@azure/static-web-apps-cli": "^1.1.6",
-      "webpack": "^5.89.0",
-      "webpack-cli": "^5.1.4",
       "@types/node": "^18.x",
-      "typescript": "^4.0.0"  
+      "rimraf": "^6.0.1",
+      "typescript": "^4.0.0",
+      "webpack": "^5.89.0",
+      "webpack-cli": "^5.1.4"
    },
    "dependencies": {
-      "express": "^4.18.2",
+      "@azure/functions": "^4.0.0",
       "axios": "^1.6.8",
+      "express": "^4.18.2",
       "qs": "^6.12.0",
-      "@azure/functions": "^4.0.0",      
       "ts-loader": "^9.5.1",
-      "ts-node": "^10.9.2"       
+      "ts-node": "^10.9.2"
    }
 }
