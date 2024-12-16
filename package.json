@@ -9,7 +9,7 @@
    "scripts": {
       "clean": "rimraf public/wfbr/static",
       "build": "npm run compile && npm run pull",    
-      "pull": "bash -c 'mkdir -p public/wfbr/static/js && cp -v -r ../Braid/WaterfallBrowser/build/* public/wfbr && cp -v ../Braid/Boxer/dist/aibot.pack.js public/assets/js'",        
+      "pull": "bash -c 'mkdir -p public/wfbr/static/js && cp -v -r ../Braid/WaterfallBrowser/build/* public/wfbr && cp -v ../Braid/Boxer/dist/boxer.min.js public/assets/js'",        
       "compile": "bash -c 'webpack-cli --config webpack-config.js && cp -v dist/main.pack.js public/assets/js && cp -v dist/main.pack.js.map public/assets/js'",
       "local-server": "node ./local-web.js"
    },
