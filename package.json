@@ -10,7 +10,7 @@
       "clean": "rimraf public/wfbr/static",
       "build": "npm run compile && npm run pull",
       "pull": "bash -c 'mkdir -p public/wfbr/static/js && cp -v -r ../Braid/WaterfallBrowser/build/* public/wfbr && cp -v ../Braid/Boxer/dist/boxer.pack.js public/assets/js'",
-      "compile": "npx esbuild src/main.js --outfile=public/main.pack.js --bundle",
+      "compile": "npx esbuild src/main.js --outfile=public/assets/js/main.pack.js --bundle",
       "local-server": "node ./local-web.js"
    },
    "devDependencies": {
