@@ -8,18 +8,17 @@
    },
    "scripts": {
       "clean": "rimraf public/wfbr/static",
-      "build": "npm run compile && npm run pull",    
-      "pull": "bash -c 'mkdir -p public/wfbr/static/js && cp -v -r ../Braid/WaterfallBrowser/build/* public/wfbr && cp -v ../Braid/Boxer/dist/boxer.min.js public/assets/js'",        
-      "compile": "bash -c 'webpack-cli --config webpack-config.js && cp -v dist/main.pack.js public/assets/js && cp -v dist/main.pack.js.map public/assets/js'",
+      "build": "npm run compile && npm run pull",
+      "pull": "bash -c 'mkdir -p public/wfbr/static/js && cp -v -r ../Braid/WaterfallBrowser/build/* public/wfbr && cp -v ../Braid/Boxer/dist/boxer.pack.js public/assets/js'",
+      "compile": "npx esbuild src/main.js --minify --sourcemap --outfile=public/main.min.js --bundle",
       "local-server": "node ./local-web.js"
    },
    "devDependencies": {
       "@azure/static-web-apps-cli": "^1.1.6",
       "@types/node": "^18.x",
+      "esbuild": "^0.24.0",
       "rimraf": "^6.0.1",
-      "typescript": "^4.0.0",
-      "webpack": "^5.89.0",
-      "webpack-cli": "^5.1.4"
+      "typescript": "^4.0.0"
    },
    "dependencies": {
       "@azure/functions": "^4.0.0",
