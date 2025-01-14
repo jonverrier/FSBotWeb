@@ -6,6 +6,9 @@
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __esm = (fn, res) => function __init() {
+    return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+  };
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
@@ -301,8 +304,8 @@
             return refObject;
           }
           var isArrayImpl = Array.isArray;
-          function isArray2(a) {
-            return isArrayImpl(a);
+          function isArray2(a2) {
+            return isArrayImpl(a2);
           }
           function typeName(value) {
             {
@@ -316,7 +319,7 @@
               try {
                 testStringCoercion(value);
                 return false;
-              } catch (e) {
+              } catch (e2) {
                 return true;
               }
             }
@@ -548,8 +551,8 @@
               props.children = children;
             } else if (childrenLength > 1) {
               var childArray = Array(childrenLength);
-              for (var i = 0; i < childrenLength; i++) {
-                childArray[i] = arguments[i + 2];
+              for (var i2 = 0; i2 < childrenLength; i2++) {
+                childArray[i2] = arguments[i2 + 2];
               }
               {
                 if (Object.freeze) {
@@ -624,8 +627,8 @@
               props.children = children;
             } else if (childrenLength > 1) {
               var childArray = Array(childrenLength);
-              for (var i = 0; i < childrenLength; i++) {
-                childArray[i] = arguments[i + 2];
+              for (var i2 = 0; i2 < childrenLength; i2++) {
+                childArray[i2] = arguments[i2 + 2];
               }
               props.children = childArray;
             }
@@ -692,8 +695,8 @@
                 if (childKey != null) {
                   escapedChildKey = escapeUserProvidedKey(childKey) + "/";
                 }
-                mapIntoArray(mappedChild, array, escapedChildKey, "", function(c) {
-                  return c;
+                mapIntoArray(mappedChild, array, escapedChildKey, "", function(c2) {
+                  return c2;
                 });
               } else if (mappedChild != null) {
                 if (isValidElement2(mappedChild)) {
@@ -723,9 +726,9 @@
             var subtreeCount = 0;
             var nextNamePrefix = nameSoFar === "" ? SEPARATOR : nameSoFar + SUBSEPARATOR;
             if (isArray2(children)) {
-              for (var i = 0; i < children.length; i++) {
-                child = children[i];
-                nextName = nextNamePrefix + getElementKey(child, i);
+              for (var i2 = 0; i2 < children.length; i2++) {
+                child = children[i2];
+                nextName = nextNamePrefix + getElementKey(child, i2);
                 subtreeCount += mapIntoArray(child, array, escapedPrefix, nextName, callback);
               }
             } else {
@@ -767,11 +770,11 @@
             return result;
           }
           function countChildren(children) {
-            var n = 0;
+            var n2 = 0;
             mapChildren(children, function() {
-              n++;
+              n2++;
             });
-            return n;
+            return n2;
           }
           function forEachChildren(children, forEachFunc, forEachContext) {
             mapChildren(children, function() {
@@ -1303,19 +1306,19 @@
               if (sample && control && typeof sample.stack === "string") {
                 var sampleLines = sample.stack.split("\n");
                 var controlLines = control.stack.split("\n");
-                var s = sampleLines.length - 1;
-                var c = controlLines.length - 1;
-                while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
-                  c--;
+                var s2 = sampleLines.length - 1;
+                var c2 = controlLines.length - 1;
+                while (s2 >= 1 && c2 >= 0 && sampleLines[s2] !== controlLines[c2]) {
+                  c2--;
                 }
-                for (; s >= 1 && c >= 0; s--, c--) {
-                  if (sampleLines[s] !== controlLines[c]) {
-                    if (s !== 1 || c !== 1) {
+                for (; s2 >= 1 && c2 >= 0; s2--, c2--) {
+                  if (sampleLines[s2] !== controlLines[c2]) {
+                    if (s2 !== 1 || c2 !== 1) {
                       do {
-                        s--;
-                        c--;
-                        if (c < 0 || sampleLines[s] !== controlLines[c]) {
-                          var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
+                        s2--;
+                        c2--;
+                        if (c2 < 0 || sampleLines[s2] !== controlLines[c2]) {
+                          var _frame = "\n" + sampleLines[s2].replace(" at new ", " at ");
                           if (fn.displayName && _frame.includes("<anonymous>")) {
                             _frame = _frame.replace("<anonymous>", fn.displayName);
                           }
@@ -1326,7 +1329,7 @@
                           }
                           return _frame;
                         }
-                      } while (s >= 1 && c >= 0);
+                      } while (s2 >= 1 && c2 >= 0);
                     }
                     break;
                   }
@@ -1513,8 +1516,8 @@
               return;
             }
             if (isArray2(node2)) {
-              for (var i = 0; i < node2.length; i++) {
-                var child = node2[i];
+              for (var i2 = 0; i2 < node2.length; i2++) {
+                var child = node2[i2];
                 if (isValidElement2(child)) {
                   validateExplicitKey(child, parentType);
                 }
@@ -1570,8 +1573,8 @@
           function validateFragmentProps(fragment) {
             {
               var keys = Object.keys(fragment.props);
-              for (var i = 0; i < keys.length; i++) {
-                var key = keys[i];
+              for (var i2 = 0; i2 < keys.length; i2++) {
+                var key = keys[i2];
                 if (key !== "children" && key !== "key") {
                   setCurrentlyValidatingElement$1(fragment);
                   error("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", key);
@@ -1619,8 +1622,8 @@
               return element;
             }
             if (validType) {
-              for (var i = 2; i < arguments.length; i++) {
-                validateChildKeys(arguments[i], type);
+              for (var i2 = 2; i2 < arguments.length; i2++) {
+                validateChildKeys(arguments[i2], type);
               }
             }
             if (type === REACT_FRAGMENT_TYPE) {
@@ -1654,8 +1657,8 @@
           }
           function cloneElementWithValidation(element, props, children) {
             var newElement = cloneElement.apply(this, arguments);
-            for (var i = 2; i < arguments.length; i++) {
-              validateChildKeys(arguments[i], newElement.type);
+            for (var i2 = 2; i2 < arguments.length; i2++) {
+              validateChildKeys(arguments[i2], newElement.type);
             }
             validatePropTypes(newElement);
             return newElement;
@@ -1832,17 +1835,17 @@
             {
               if (!isFlushing) {
                 isFlushing = true;
-                var i = 0;
+                var i2 = 0;
                 try {
-                  for (; i < queue.length; i++) {
-                    var callback = queue[i];
+                  for (; i2 < queue.length; i2++) {
+                    var callback = queue[i2];
                     do {
                       callback = callback(true);
                     } while (callback !== null);
                   }
                   queue.length = 0;
                 } catch (error2) {
-                  queue = queue.slice(i + 1);
+                  queue = queue.slice(i2 + 1);
                   throw error2;
                 } finally {
                   isFlushing = false;
@@ -1949,8 +1952,8 @@
             }
             return first;
           }
-          function siftUp(heap, node2, i) {
-            var index = i;
+          function siftUp(heap, node2, i2) {
+            var index = i2;
             while (index > 0) {
               var parentIndex = index - 1 >>> 1;
               var parent = heap[parentIndex];
@@ -1963,8 +1966,8 @@
               }
             }
           }
-          function siftDown(heap, node2, i) {
-            var index = i;
+          function siftDown(heap, node2, i2) {
+            var index = i2;
             var length2 = heap.length;
             var halfLength = length2 >>> 1;
             while (index < halfLength) {
@@ -1991,9 +1994,9 @@
               }
             }
           }
-          function compare(a, b) {
-            var diff = a.sortIndex - b.sortIndex;
-            return diff !== 0 ? diff : a.id - b.id;
+          function compare(a2, b2) {
+            var diff = a2.sortIndex - b2.sortIndex;
+            return diff !== 0 ? diff : a2.id - b2.id;
           }
           var ImmediatePriority = 1;
           var UserBlockingPriority = 2;
@@ -2489,8 +2492,8 @@
                 possibleRegistrationNames.ondblclick = registrationName;
               }
             }
-            for (var i = 0; i < dependencies.length; i++) {
-              allNativeEvents.add(dependencies[i]);
+            for (var i2 = 0; i2 < dependencies.length; i2++) {
+              allNativeEvents.add(dependencies[i2]);
             }
           }
           var canUseDOM3 = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
@@ -2507,7 +2510,7 @@
               try {
                 testStringCoercion(value);
                 return false;
-              } catch (e) {
+              } catch (e2) {
                 return true;
               }
             }
@@ -3370,19 +3373,19 @@
               if (sample && control && typeof sample.stack === "string") {
                 var sampleLines = sample.stack.split("\n");
                 var controlLines = control.stack.split("\n");
-                var s = sampleLines.length - 1;
-                var c = controlLines.length - 1;
-                while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
-                  c--;
+                var s2 = sampleLines.length - 1;
+                var c2 = controlLines.length - 1;
+                while (s2 >= 1 && c2 >= 0 && sampleLines[s2] !== controlLines[c2]) {
+                  c2--;
                 }
-                for (; s >= 1 && c >= 0; s--, c--) {
-                  if (sampleLines[s] !== controlLines[c]) {
-                    if (s !== 1 || c !== 1) {
+                for (; s2 >= 1 && c2 >= 0; s2--, c2--) {
+                  if (sampleLines[s2] !== controlLines[c2]) {
+                    if (s2 !== 1 || c2 !== 1) {
                       do {
-                        s--;
-                        c--;
-                        if (c < 0 || sampleLines[s] !== controlLines[c]) {
-                          var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
+                        s2--;
+                        c2--;
+                        if (c2 < 0 || sampleLines[s2] !== controlLines[c2]) {
+                          var _frame = "\n" + sampleLines[s2].replace(" at new ", " at ");
                           if (fn.displayName && _frame.includes("<anonymous>")) {
                             _frame = _frame.replace("<anonymous>", fn.displayName);
                           }
@@ -3393,7 +3396,7 @@
                           }
                           return _frame;
                         }
-                      } while (s >= 1 && c >= 0);
+                      } while (s2 >= 1 && c2 >= 0);
                     }
                     break;
                   }
@@ -3823,7 +3826,7 @@
             }
             try {
               return doc.activeElement || doc.body;
-            } catch (e) {
+            } catch (e2) {
               return doc.body;
             }
           }
@@ -3964,8 +3967,8 @@
                 checkAttributeStringCoercion(name, "name");
               }
               var group = queryRoot.querySelectorAll("input[name=" + JSON.stringify("" + name) + '][type="radio"]');
-              for (var i = 0; i < group.length; i++) {
-                var otherNode = group[i];
+              for (var i2 = 0; i2 < group.length; i2++) {
+                var otherNode = group[i2];
                 if (otherNode === rootNode || otherNode.form !== rootNode.form) {
                   continue;
                 }
@@ -4028,8 +4031,8 @@
             }
           }
           var isArrayImpl = Array.isArray;
-          function isArray2(a) {
-            return isArrayImpl(a);
+          function isArray2(a2) {
+            return isArrayImpl(a2);
           }
           var didWarnValueDefaultValue$1;
           {
@@ -4046,8 +4049,8 @@
           function checkSelectPropTypes(props) {
             {
               checkControlledValueProps("select", props);
-              for (var i = 0; i < valuePropNames.length; i++) {
-                var propName = valuePropNames[i];
+              for (var i2 = 0; i2 < valuePropNames.length; i2++) {
+                var propName = valuePropNames[i2];
                 if (props[propName] == null) {
                   continue;
                 }
@@ -4065,8 +4068,8 @@
             if (multiple) {
               var selectedValues = propValue;
               var selectedValue = {};
-              for (var i = 0; i < selectedValues.length; i++) {
-                selectedValue["$" + selectedValues[i]] = true;
+              for (var i2 = 0; i2 < selectedValues.length; i2++) {
+                selectedValue["$" + selectedValues[i2]] = true;
               }
               for (var _i = 0; _i < options2.length; _i++) {
                 var selected = selectedValue.hasOwnProperty("$" + options2[_i].value);
@@ -4542,8 +4545,8 @@
             var expanded = {};
             for (var key in styles) {
               var longhands = shorthandToLonghand[key] || [key];
-              for (var i = 0; i < longhands.length; i++) {
-                expanded[longhands[i]] = key;
+              for (var i2 = 0; i2 < longhands.length; i2++) {
+                expanded[longhands[i2]] = key;
               }
             }
             return expanded;
@@ -5469,8 +5472,8 @@
             restoreQueue = null;
             restoreStateOfTarget(target);
             if (queuedTargets) {
-              for (var i = 0; i < queuedTargets.length; i++) {
-                restoreStateOfTarget(queuedTargets[i]);
+              for (var i2 = 0; i2 < queuedTargets.length; i2++) {
+                restoreStateOfTarget(queuedTargets[i2]);
               }
             }
           }
@@ -5487,13 +5490,13 @@
               restoreStateIfNeeded();
             }
           }
-          function batchedUpdates(fn, a, b) {
+          function batchedUpdates(fn, a2, b2) {
             if (isInsideEventHandler) {
-              return fn(a, b);
+              return fn(a2, b2);
             }
             isInsideEventHandler = true;
             try {
-              return batchedUpdatesImpl(fn, a, b);
+              return batchedUpdatesImpl(fn, a2, b2);
             } finally {
               isInsideEventHandler = false;
               finishEventHandler();
@@ -5553,11 +5556,11 @@
               });
               window.addEventListener("test", options, options);
               window.removeEventListener("test", options, options);
-            } catch (e) {
+            } catch (e2) {
               passiveBrowserEventsSupported = false;
             }
           }
-          function invokeGuardedCallbackProd(name, func, context, a, b, c, d, e, f) {
+          function invokeGuardedCallbackProd(name, func, context, a2, b2, c2, d2, e2, f2) {
             var funcArgs = Array.prototype.slice.call(arguments, 3);
             try {
               func.apply(context, funcArgs);
@@ -5569,7 +5572,7 @@
           {
             if (typeof window !== "undefined" && typeof window.dispatchEvent === "function" && typeof document !== "undefined" && typeof document.createEvent === "function") {
               var fakeNode = document.createElement("react");
-              invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a, b, c, d, e, f) {
+              invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a2, b2, c2, d2, e2, f2) {
                 if (typeof document === "undefined" || document === null) {
                   throw new Error("The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.");
                 }
@@ -5644,12 +5647,12 @@
               caughtError = error2;
             }
           };
-          function invokeGuardedCallback(name, func, context, a, b, c, d, e, f) {
+          function invokeGuardedCallback(name, func, context, a2, b2, c2, d2, e2, f2) {
             hasError = false;
             caughtError = null;
             invokeGuardedCallbackImpl$1.apply(reporter, arguments);
           }
-          function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c, d, e, f) {
+          function invokeGuardedCallbackAndCatchFirstError(name, func, context, a2, b2, c2, d2, e2, f2) {
             invokeGuardedCallback.apply(this, arguments);
             if (hasError) {
               var error2 = clearCaughtError();
@@ -5878,10 +5881,10 @@
               }
               return fiber;
             }
-            var a = fiber;
-            var b = alternate;
+            var a2 = fiber;
+            var b2 = alternate;
             while (true) {
-              var parentA = a.return;
+              var parentA = a2.return;
               if (parentA === null) {
                 break;
               }
@@ -5889,7 +5892,7 @@
               if (parentB === null) {
                 var nextParent = parentA.return;
                 if (nextParent !== null) {
-                  a = b = nextParent;
+                  a2 = b2 = nextParent;
                   continue;
                 }
                 break;
@@ -5897,11 +5900,11 @@
               if (parentA.child === parentB.child) {
                 var child = parentA.child;
                 while (child) {
-                  if (child === a) {
+                  if (child === a2) {
                     assertIsMounted(parentA);
                     return fiber;
                   }
-                  if (child === b) {
+                  if (child === b2) {
                     assertIsMounted(parentA);
                     return alternate;
                   }
@@ -5909,23 +5912,23 @@
                 }
                 throw new Error("Unable to find node on an unmounted component.");
               }
-              if (a.return !== b.return) {
-                a = parentA;
-                b = parentB;
+              if (a2.return !== b2.return) {
+                a2 = parentA;
+                b2 = parentB;
               } else {
                 var didFindChild = false;
                 var _child = parentA.child;
                 while (_child) {
-                  if (_child === a) {
+                  if (_child === a2) {
                     didFindChild = true;
-                    a = parentA;
-                    b = parentB;
+                    a2 = parentA;
+                    b2 = parentB;
                     break;
                   }
-                  if (_child === b) {
+                  if (_child === b2) {
                     didFindChild = true;
-                    b = parentA;
-                    a = parentB;
+                    b2 = parentA;
+                    a2 = parentB;
                     break;
                   }
                   _child = _child.sibling;
@@ -5933,16 +5936,16 @@
                 if (!didFindChild) {
                   _child = parentB.child;
                   while (_child) {
-                    if (_child === a) {
+                    if (_child === a2) {
                       didFindChild = true;
-                      a = parentB;
-                      b = parentA;
+                      a2 = parentB;
+                      b2 = parentA;
                       break;
                     }
-                    if (_child === b) {
+                    if (_child === b2) {
                       didFindChild = true;
-                      b = parentB;
-                      a = parentA;
+                      b2 = parentB;
+                      a2 = parentA;
                       break;
                     }
                     _child = _child.sibling;
@@ -5952,14 +5955,14 @@
                   }
                 }
               }
-              if (a.alternate !== b) {
+              if (a2.alternate !== b2) {
                 throw new Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.");
               }
             }
-            if (a.tag !== HostRoot) {
+            if (a2.tag !== HostRoot) {
               throw new Error("Unable to find node on an unmounted component.");
             }
-            if (a.stateNode.current === a) {
+            if (a2.stateNode.current === a2) {
               return fiber;
             }
             return alternate;
@@ -6816,30 +6819,30 @@
           function laneToIndex(lane) {
             return pickArbitraryLaneIndex(lane);
           }
-          function includesSomeLane(a, b) {
-            return (a & b) !== NoLanes;
+          function includesSomeLane(a2, b2) {
+            return (a2 & b2) !== NoLanes;
           }
           function isSubsetOfLanes(set2, subset) {
             return (set2 & subset) === subset;
           }
-          function mergeLanes(a, b) {
-            return a | b;
+          function mergeLanes(a2, b2) {
+            return a2 | b2;
           }
           function removeLanes(set2, subset) {
             return set2 & ~subset;
           }
-          function intersectLanes(a, b) {
-            return a & b;
+          function intersectLanes(a2, b2) {
+            return a2 & b2;
           }
           function laneToLanes(lane) {
             return lane;
           }
-          function higherPriorityLane(a, b) {
-            return a !== NoLane && a < b ? a : b;
+          function higherPriorityLane(a2, b2) {
+            return a2 !== NoLane && a2 < b2 ? a2 : b2;
           }
           function createLaneMap(initial) {
             var laneMap = [];
-            for (var i = 0; i < TotalLanes; i++) {
+            for (var i2 = 0; i2 < TotalLanes; i2++) {
               laneMap.push(initial);
             }
             return laneMap;
@@ -7012,14 +7015,14 @@
               currentUpdatePriority = previousPriority;
             }
           }
-          function higherEventPriority(a, b) {
-            return a !== 0 && a < b ? a : b;
+          function higherEventPriority(a2, b2) {
+            return a2 !== 0 && a2 < b2 ? a2 : b2;
           }
-          function lowerEventPriority(a, b) {
-            return a === 0 || a > b ? a : b;
+          function lowerEventPriority(a2, b2) {
+            return a2 === 0 || a2 > b2 ? a2 : b2;
           }
-          function isHigherEventPriority(a, b) {
-            return a !== 0 && a < b;
+          function isHigherEventPriority(a2, b2) {
+            return a2 !== 0 && a2 < b2;
           }
           function lanesToEventPriority(lanes) {
             var lane = getHighestPriorityLane(lanes);
@@ -7223,14 +7226,14 @@
               target,
               priority: updatePriority
             };
-            var i = 0;
-            for (; i < queuedExplicitHydrationTargets.length; i++) {
-              if (!isHigherEventPriority(updatePriority, queuedExplicitHydrationTargets[i].priority)) {
+            var i2 = 0;
+            for (; i2 < queuedExplicitHydrationTargets.length; i2++) {
+              if (!isHigherEventPriority(updatePriority, queuedExplicitHydrationTargets[i2].priority)) {
                 break;
               }
             }
-            queuedExplicitHydrationTargets.splice(i, 0, queuedTarget);
-            if (i === 0) {
+            queuedExplicitHydrationTargets.splice(i2, 0, queuedTarget);
+            if (i2 === 0) {
               attemptExplicitHydrationTarget(queuedTarget);
             }
           }
@@ -7293,8 +7296,8 @@
           function retryIfBlockedOn(unblocked) {
             if (queuedDiscreteEvents.length > 0) {
               scheduleCallbackIfUnblocked(queuedDiscreteEvents[0], unblocked);
-              for (var i = 1; i < queuedDiscreteEvents.length; i++) {
-                var queuedEvent = queuedDiscreteEvents[i];
+              for (var i2 = 1; i2 < queuedDiscreteEvents.length; i2++) {
+                var queuedEvent = queuedDiscreteEvents[i2];
                 if (queuedEvent.blockedOn === unblocked) {
                   queuedEvent.blockedOn = null;
                 }
@@ -8399,8 +8402,8 @@
             }
             accumulateEnterLeaveTwoPhaseListeners(dispatchQueue, leave, enter, from2, to);
           }
-          function is(x, y) {
-            return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
+          function is(x, y2) {
+            return x === y2 && (x !== 0 || 1 / x === 1 / y2) || x !== x && y2 !== y2;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
           function shallowEqual(objA, objB) {
@@ -8415,8 +8418,8 @@
             if (keysA.length !== keysB.length) {
               return false;
             }
-            for (var i = 0; i < keysA.length; i++) {
-              var currentKey = keysA[i];
+            for (var i2 = 0; i2 < keysA.length; i2++) {
+              var currentKey = keysA[i2];
               if (!hasOwnProperty2.call(objB, currentKey) || !objectIs(objA[currentKey], objB[currentKey])) {
                 return false;
               }
@@ -8466,7 +8469,7 @@
             try {
               anchorNode.nodeType;
               focusNode.nodeType;
-            } catch (e) {
+            } catch (e2) {
               return null;
             }
             return getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset);
@@ -8632,8 +8635,8 @@
               if (typeof priorFocusedElem.focus === "function") {
                 priorFocusedElem.focus();
               }
-              for (var i = 0; i < ancestors.length; i++) {
-                var info = ancestors[i];
+              for (var i2 = 0; i2 < ancestors.length; i2++) {
+                var info = ancestors[i2];
                 info.element.scrollLeft = info.left;
                 info.element.scrollTop = info.top;
               }
@@ -8811,8 +8814,8 @@
             registerTwoPhaseEvent(reactName, [domEventName]);
           }
           function registerSimpleEvents() {
-            for (var i = 0; i < simpleEventPluginEvents.length; i++) {
-              var eventName = simpleEventPluginEvents[i];
+            for (var i2 = 0; i2 < simpleEventPluginEvents.length; i2++) {
+              var eventName = simpleEventPluginEvents[i2];
               var domEventName = eventName.toLowerCase();
               var capitalizedEvent = eventName[0].toUpperCase() + eventName.slice(1);
               registerSimpleEvent(domEventName, "on" + capitalizedEvent);
@@ -8960,8 +8963,8 @@
           function processDispatchQueueItemsInOrder(event, dispatchListeners, inCapturePhase) {
             var previousInstance;
             if (inCapturePhase) {
-              for (var i = dispatchListeners.length - 1; i >= 0; i--) {
-                var _dispatchListeners$i = dispatchListeners[i], instance = _dispatchListeners$i.instance, currentTarget = _dispatchListeners$i.currentTarget, listener = _dispatchListeners$i.listener;
+              for (var i2 = dispatchListeners.length - 1; i2 >= 0; i2--) {
+                var _dispatchListeners$i = dispatchListeners[i2], instance = _dispatchListeners$i.instance, currentTarget = _dispatchListeners$i.currentTarget, listener = _dispatchListeners$i.listener;
                 if (instance !== previousInstance && event.isPropagationStopped()) {
                   return;
                 }
@@ -8981,8 +8984,8 @@
           }
           function processDispatchQueue(dispatchQueue, eventSystemFlags) {
             var inCapturePhase = (eventSystemFlags & IS_CAPTURE_PHASE) !== 0;
-            for (var i = 0; i < dispatchQueue.length; i++) {
-              var _dispatchQueue$i = dispatchQueue[i], event = _dispatchQueue$i.event, listeners = _dispatchQueue$i.listeners;
+            for (var i2 = 0; i2 < dispatchQueue.length; i2++) {
+              var _dispatchQueue$i = dispatchQueue[i2], event = _dispatchQueue$i.event, listeners = _dispatchQueue$i.listeners;
               processDispatchQueueItemsInOrder(event, listeners, inCapturePhase);
             }
             rethrowCaughtError();
@@ -9407,9 +9410,9 @@
             }
           }
           function updateDOMProperties(domElement, updatePayload, wasCustomComponentTag, isCustomComponentTag) {
-            for (var i = 0; i < updatePayload.length; i += 2) {
-              var propKey = updatePayload[i];
-              var propValue = updatePayload[i + 1];
+            for (var i2 = 0; i2 < updatePayload.length; i2 += 2) {
+              var propKey = updatePayload[i2];
+              var propValue = updatePayload[i2 + 1];
               if (propKey === STYLE) {
                 setValueForStyles(domElement, propValue);
               } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
@@ -9492,8 +9495,8 @@
                 break;
               case "video":
               case "audio":
-                for (var i = 0; i < mediaEventTypes.length; i++) {
-                  listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
+                for (var i2 = 0; i2 < mediaEventTypes.length; i2++) {
+                  listenToNonDelegatedEvent(mediaEventTypes[i2], domElement);
                 }
                 props = rawProps;
                 break;
@@ -9740,8 +9743,8 @@
                 break;
               case "video":
               case "audio":
-                for (var i = 0; i < mediaEventTypes.length; i++) {
-                  listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
+                for (var i2 = 0; i2 < mediaEventTypes.length; i2++) {
+                  listenToNonDelegatedEvent(mediaEventTypes[i2], domElement);
                 }
                 break;
               case "source":
@@ -11065,14 +11068,14 @@
           function flushSyncCallbacks() {
             if (!isFlushingSyncQueue && syncQueue !== null) {
               isFlushingSyncQueue = true;
-              var i = 0;
+              var i2 = 0;
               var previousUpdatePriority = getCurrentUpdatePriority();
               try {
                 var isSync = true;
                 var queue = syncQueue;
                 setCurrentUpdatePriority(DiscreteEventPriority);
-                for (; i < queue.length; i++) {
-                  var callback = queue[i];
+                for (; i2 < queue.length; i2++) {
+                  var callback = queue[i2];
                   do {
                     callback = callback(isSync);
                   } while (callback !== null);
@@ -11081,7 +11084,7 @@
                 includesLegacySyncCallbacks = false;
               } catch (error2) {
                 if (syncQueue !== null) {
-                  syncQueue = syncQueue.slice(i + 1);
+                  syncQueue = syncQueue.slice(i2 + 1);
                 }
                 scheduleCallback(ImmediatePriority, flushSyncCallbacks);
                 throw error2;
@@ -12188,8 +12191,8 @@
             function reconcileChildrenArray(returnFiber, currentFirstChild, newChildren, lanes) {
               {
                 var knownKeys = null;
-                for (var i = 0; i < newChildren.length; i++) {
-                  var child = newChildren[i];
+                for (var i2 = 0; i2 < newChildren.length; i2++) {
+                  var child = newChildren[i2];
                   knownKeys = warnOnInvalidKey(child, knownKeys, returnFiber);
                 }
               }
@@ -12772,8 +12775,8 @@
           }
           function finishQueueingConcurrentUpdates() {
             if (concurrentQueues !== null) {
-              for (var i = 0; i < concurrentQueues.length; i++) {
-                var queue = concurrentQueues[i];
+              for (var i2 = 0; i2 < concurrentQueues.length; i2++) {
+                var queue = concurrentQueues[i2];
                 var lastInterleavedUpdate = queue.interleaved;
                 if (lastInterleavedUpdate !== null) {
                   queue.interleaved = null;
@@ -13216,8 +13219,8 @@
             var effects = finishedQueue.effects;
             finishedQueue.effects = null;
             if (effects !== null) {
-              for (var i = 0; i < effects.length; i++) {
-                var effect = effects[i];
+              for (var i2 = 0; i2 < effects.length; i2++) {
+                var effect = effects[i2];
                 var callback = effect.callback;
                 if (callback !== null) {
                   effect.callback = null;
@@ -13230,11 +13233,11 @@
           var contextStackCursor$1 = createCursor(NO_CONTEXT);
           var contextFiberStackCursor = createCursor(NO_CONTEXT);
           var rootInstanceStackCursor = createCursor(NO_CONTEXT);
-          function requiredContext(c) {
-            if (c === NO_CONTEXT) {
+          function requiredContext(c2) {
+            if (c2 === NO_CONTEXT) {
               throw new Error("Expected host context to exist. This error is likely caused by a bug in React. Please file an issue.");
             }
-            return c;
+            return c2;
           }
           function getRootHostContainer() {
             var rootInstance = requiredContext(rootInstanceStackCursor.current);
@@ -13369,8 +13372,8 @@
           );
           var workInProgressSources = [];
           function resetWorkInProgressVersions() {
-            for (var i = 0; i < workInProgressSources.length; i++) {
-              var mutableSource = workInProgressSources[i];
+            for (var i2 = 0; i2 < workInProgressSources.length; i2++) {
+              var mutableSource = workInProgressSources[i2];
               {
                 mutableSource._workInProgressVersionPrimary = null;
               }
@@ -13441,10 +13444,10 @@
                 if (hookTypesDev !== null) {
                   var table = "";
                   var secondColumnStart = 30;
-                  for (var i = 0; i <= hookTypesUpdateIndexDev; i++) {
-                    var oldHookName = hookTypesDev[i];
-                    var newHookName = i === hookTypesUpdateIndexDev ? currentHookName : oldHookName;
-                    var row = i + 1 + ". " + oldHookName;
+                  for (var i2 = 0; i2 <= hookTypesUpdateIndexDev; i2++) {
+                    var oldHookName = hookTypesDev[i2];
+                    var newHookName = i2 === hookTypesUpdateIndexDev ? currentHookName : oldHookName;
+                    var row = i2 + 1 + ". " + oldHookName;
                     while (row.length < secondColumnStart) {
                       row += " ";
                     }
@@ -13476,8 +13479,8 @@
                 error("The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s", currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + nextDeps.join(", ") + "]");
               }
             }
-            for (var i = 0; i < prevDeps.length && i < nextDeps.length; i++) {
-              if (objectIs(nextDeps[i], prevDeps[i])) {
+            for (var i2 = 0; i2 < prevDeps.length && i2 < nextDeps.length; i2++) {
+              if (objectIs(nextDeps[i2], prevDeps[i2])) {
                 continue;
               }
               return false;
@@ -15992,9 +15995,9 @@
               } else {
                 console["error"](error2);
               }
-            } catch (e) {
+            } catch (e2) {
               setTimeout(function() {
-                throw e;
+                throw e2;
               });
             }
           }
@@ -17440,8 +17443,8 @@
             {
               if ((revealOrder === "forwards" || revealOrder === "backwards") && children !== void 0 && children !== null && children !== false) {
                 if (isArray2(children)) {
-                  for (var i = 0; i < children.length; i++) {
-                    if (!validateSuspenseListNestedChild(children[i], i)) {
+                  for (var i2 = 0; i2 < children.length; i2++) {
+                    if (!validateSuspenseListNestedChild(children[i2], i2)) {
                       return;
                     }
                   }
@@ -19629,8 +19632,8 @@
           function recursivelyTraverseMutationEffects(root2, parentFiber, lanes) {
             var deletions = parentFiber.deletions;
             if (deletions !== null) {
-              for (var i = 0; i < deletions.length; i++) {
-                var childToDelete = deletions[i];
+              for (var i2 = 0; i2 < deletions.length; i2++) {
+                var childToDelete = deletions[i2];
                 try {
                   commitDeletionEffects(root2, parentFiber, childToDelete);
                 } catch (error2) {
@@ -20136,8 +20139,8 @@
               if ((nextEffect.flags & ChildDeletion) !== NoFlags) {
                 var deletions = fiber.deletions;
                 if (deletions !== null) {
-                  for (var i = 0; i < deletions.length; i++) {
-                    var fiberToDelete = deletions[i];
+                  for (var i2 = 0; i2 < deletions.length; i2++) {
+                    var fiberToDelete = deletions[i2];
                     nextEffect = fiberToDelete;
                     commitPassiveUnmountEffectsInsideOfDeletedTree_begin(fiberToDelete, fiber);
                   }
@@ -20782,8 +20785,8 @@
                 if (updateQueue !== null) {
                   var checks = updateQueue.stores;
                   if (checks !== null) {
-                    for (var i = 0; i < checks.length; i++) {
-                      var check = checks[i];
+                    for (var i2 = 0; i2 < checks.length; i2++) {
+                      var check = checks[i2];
                       var getSnapshot = check.getSnapshot;
                       var renderedValue = check.value;
                       try {
@@ -20870,11 +20873,11 @@
               }
             }
           }
-          function batchedUpdates$1(fn, a) {
+          function batchedUpdates$1(fn, a2) {
             var prevExecutionContext = executionContext;
             executionContext |= BatchedContext;
             try {
-              return fn(a);
+              return fn(a2);
             } finally {
               executionContext = prevExecutionContext;
               if (executionContext === NoContext && // Treat `act` as if it's inside `batchedUpdates`, even in legacy mode.
@@ -20884,13 +20887,13 @@
               }
             }
           }
-          function discreteUpdates(fn, a, b, c, d) {
+          function discreteUpdates(fn, a2, b2, c2, d2) {
             var previousPriority = getCurrentUpdatePriority();
             var prevTransition = ReactCurrentBatchConfig$3.transition;
             try {
               ReactCurrentBatchConfig$3.transition = null;
               setCurrentUpdatePriority(DiscreteEventPriority);
-              return fn(a, b, c, d);
+              return fn(a2, b2, c2, d2);
             } finally {
               setCurrentUpdatePriority(previousPriority);
               ReactCurrentBatchConfig$3.transition = prevTransition;
@@ -21360,8 +21363,8 @@
             ensureRootIsScheduled(root2, now());
             if (recoverableErrors !== null) {
               var onRecoverableError = root2.onRecoverableError;
-              for (var i = 0; i < recoverableErrors.length; i++) {
-                var recoverableError = recoverableErrors[i];
+              for (var i2 = 0; i2 < recoverableErrors.length; i2++) {
+                var recoverableError = recoverableErrors[i2];
                 var componentStack = recoverableError.stack;
                 var digest = recoverableError.digest;
                 onRecoverableError(recoverableError.value, {
@@ -21455,8 +21458,8 @@
             {
               var profilerEffects = pendingPassiveProfilerEffects;
               pendingPassiveProfilerEffects = [];
-              for (var i = 0; i < profilerEffects.length; i++) {
-                var _fiber = profilerEffects[i];
+              for (var i2 = 0; i2 < profilerEffects.length; i2++) {
+                var _fiber = profilerEffects[i2];
                 commitPassiveEffectDurations(root2, _fiber);
               }
             }
@@ -22139,7 +22142,7 @@
               var nonExtensibleObject = Object.preventExtensions({});
               /* @__PURE__ */ new Map([[nonExtensibleObject, null]]);
               /* @__PURE__ */ new Set([nonExtensibleObject]);
-            } catch (e) {
+            } catch (e2) {
               hasBadMapPolyfill = true;
             }
           }
@@ -22893,8 +22896,8 @@
                 warn("copyWithRename() expects paths of the same length");
                 return;
               } else {
-                for (var i = 0; i < newPath.length - 1; i++) {
-                  if (oldPath[i] !== newPath[i]) {
+                for (var i2 = 0; i2 < newPath.length - 1; i2++) {
+                  if (oldPath[i2] !== newPath[i2]) {
                     warn("copyWithRename() expects paths to be the same except for the deepest key");
                     return;
                   }
@@ -23184,8 +23187,8 @@
             markContainerAsRoot(root2.current, container);
             listenToAllSupportedEvents(container);
             if (mutableSources) {
-              for (var i = 0; i < mutableSources.length; i++) {
-                var mutableSource = mutableSources[i];
+              for (var i2 = 0; i2 < mutableSources.length; i2++) {
+                var mutableSource = mutableSources[i2];
                 registerMutableSourceForHydration(root2, mutableSource);
               }
             }
@@ -23559,30 +23562,30 @@
   var require_client = __commonJS({
     "node_modules/react-dom/client.js"(exports) {
       "use strict";
-      var m = require_react_dom();
+      var m2 = require_react_dom();
       if (false) {
-        exports.createRoot = m.createRoot;
-        exports.hydrateRoot = m.hydrateRoot;
+        exports.createRoot = m2.createRoot;
+        exports.hydrateRoot = m2.hydrateRoot;
       } else {
-        i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-        exports.createRoot = function(c, o) {
-          i.usingClientEntryPoint = true;
+        i2 = m2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        exports.createRoot = function(c2, o2) {
+          i2.usingClientEntryPoint = true;
           try {
-            return m.createRoot(c, o);
+            return m2.createRoot(c2, o2);
           } finally {
-            i.usingClientEntryPoint = false;
+            i2.usingClientEntryPoint = false;
           }
         };
-        exports.hydrateRoot = function(c, h, o) {
-          i.usingClientEntryPoint = true;
+        exports.hydrateRoot = function(c2, h2, o2) {
+          i2.usingClientEntryPoint = true;
           try {
-            return m.hydrateRoot(c, h, o);
+            return m2.hydrateRoot(c2, h2, o2);
           } finally {
-            i.usingClientEntryPoint = false;
+            i2.usingClientEntryPoint = false;
           }
         };
       }
-      var i;
+      var i2;
     }
   });
 
@@ -24103,19 +24106,19 @@
               if (sample && control && typeof sample.stack === "string") {
                 var sampleLines = sample.stack.split("\n");
                 var controlLines = control.stack.split("\n");
-                var s = sampleLines.length - 1;
-                var c = controlLines.length - 1;
-                while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
-                  c--;
+                var s2 = sampleLines.length - 1;
+                var c2 = controlLines.length - 1;
+                while (s2 >= 1 && c2 >= 0 && sampleLines[s2] !== controlLines[c2]) {
+                  c2--;
                 }
-                for (; s >= 1 && c >= 0; s--, c--) {
-                  if (sampleLines[s] !== controlLines[c]) {
-                    if (s !== 1 || c !== 1) {
+                for (; s2 >= 1 && c2 >= 0; s2--, c2--) {
+                  if (sampleLines[s2] !== controlLines[c2]) {
+                    if (s2 !== 1 || c2 !== 1) {
                       do {
-                        s--;
-                        c--;
-                        if (c < 0 || sampleLines[s] !== controlLines[c]) {
-                          var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
+                        s2--;
+                        c2--;
+                        if (c2 < 0 || sampleLines[s2] !== controlLines[c2]) {
+                          var _frame = "\n" + sampleLines[s2].replace(" at new ", " at ");
                           if (fn.displayName && _frame.includes("<anonymous>")) {
                             _frame = _frame.replace("<anonymous>", fn.displayName);
                           }
@@ -24126,7 +24129,7 @@
                           }
                           return _frame;
                         }
-                      } while (s >= 1 && c >= 0);
+                      } while (s2 >= 1 && c2 >= 0);
                     }
                     break;
                   }
@@ -24241,8 +24244,8 @@
             }
           }
           var isArrayImpl = Array.isArray;
-          function isArray2(a) {
-            return isArrayImpl(a);
+          function isArray2(a2) {
+            return isArrayImpl(a2);
           }
           function typeName(value) {
             {
@@ -24256,7 +24259,7 @@
               try {
                 testStringCoercion(value);
                 return false;
-              } catch (e) {
+              } catch (e2) {
                 return true;
               }
             }
@@ -24516,8 +24519,8 @@
                 return;
               }
               if (isArray2(node2)) {
-                for (var i = 0; i < node2.length; i++) {
-                  var child = node2[i];
+                for (var i2 = 0; i2 < node2.length; i2++) {
+                  var child = node2[i2];
                   if (isValidElement2(child)) {
                     validateExplicitKey(child, parentType);
                   }
@@ -24574,8 +24577,8 @@
           function validateFragmentProps(fragment) {
             {
               var keys = Object.keys(fragment.props);
-              for (var i = 0; i < keys.length; i++) {
-                var key = keys[i];
+              for (var i2 = 0; i2 < keys.length; i2++) {
+                var key = keys[i2];
                 if (key !== "children" && key !== "key") {
                   setCurrentlyValidatingElement$1(fragment);
                   error("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", key);
@@ -24627,8 +24630,8 @@
                 if (children !== void 0) {
                   if (isStaticChildren) {
                     if (isArray2(children)) {
-                      for (var i = 0; i < children.length; i++) {
-                        validateChildKeys(children[i], type);
+                      for (var i2 = 0; i2 < children.length; i2++) {
+                        validateChildKeys(children[i2], type);
                       }
                       if (Object.freeze) {
                         Object.freeze(children);
@@ -24695,6 +24698,187 @@
     }
   });
 
+  // node_modules/web-vitals/dist/web-vitals.js
+  var web_vitals_exports = {};
+  __export(web_vitals_exports, {
+    getCLS: () => h,
+    getFCP: () => d,
+    getFID: () => L,
+    getLCP: () => F,
+    getTTFB: () => P
+  });
+  var e, t, n, i, r, a, o, u, c, f, s, m, v, d, p, l, h, T, y, g, E, S, w, L, b, F, P;
+  var init_web_vitals = __esm({
+    "node_modules/web-vitals/dist/web-vitals.js"() {
+      r = function(e2, t2) {
+        return { name: e2, value: void 0 === t2 ? -1 : t2, delta: 0, entries: [], id: "v2-".concat(Date.now(), "-").concat(Math.floor(8999999999999 * Math.random()) + 1e12) };
+      };
+      a = function(e2, t2) {
+        try {
+          if (PerformanceObserver.supportedEntryTypes.includes(e2)) {
+            if ("first-input" === e2 && !("PerformanceEventTiming" in self)) return;
+            var n2 = new PerformanceObserver(function(e3) {
+              return e3.getEntries().map(t2);
+            });
+            return n2.observe({ type: e2, buffered: true }), n2;
+          }
+        } catch (e3) {
+        }
+      };
+      o = function(e2, t2) {
+        var n2 = function n3(i2) {
+          "pagehide" !== i2.type && "hidden" !== document.visibilityState || (e2(i2), t2 && (removeEventListener("visibilitychange", n3, true), removeEventListener("pagehide", n3, true)));
+        };
+        addEventListener("visibilitychange", n2, true), addEventListener("pagehide", n2, true);
+      };
+      u = function(e2) {
+        addEventListener("pageshow", function(t2) {
+          t2.persisted && e2(t2);
+        }, true);
+      };
+      c = function(e2, t2, n2) {
+        var i2;
+        return function(r2) {
+          t2.value >= 0 && (r2 || n2) && (t2.delta = t2.value - (i2 || 0), (t2.delta || void 0 === i2) && (i2 = t2.value, e2(t2)));
+        };
+      };
+      f = -1;
+      s = function() {
+        return "hidden" === document.visibilityState ? 0 : 1 / 0;
+      };
+      m = function() {
+        o(function(e2) {
+          var t2 = e2.timeStamp;
+          f = t2;
+        }, true);
+      };
+      v = function() {
+        return f < 0 && (f = s(), m(), u(function() {
+          setTimeout(function() {
+            f = s(), m();
+          }, 0);
+        })), { get firstHiddenTime() {
+          return f;
+        } };
+      };
+      d = function(e2, t2) {
+        var n2, i2 = v(), o2 = r("FCP"), f2 = function(e3) {
+          "first-contentful-paint" === e3.name && (m2 && m2.disconnect(), e3.startTime < i2.firstHiddenTime && (o2.value = e3.startTime, o2.entries.push(e3), n2(true)));
+        }, s2 = window.performance && performance.getEntriesByName && performance.getEntriesByName("first-contentful-paint")[0], m2 = s2 ? null : a("paint", f2);
+        (s2 || m2) && (n2 = c(e2, o2, t2), s2 && f2(s2), u(function(i3) {
+          o2 = r("FCP"), n2 = c(e2, o2, t2), requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+              o2.value = performance.now() - i3.timeStamp, n2(true);
+            });
+          });
+        }));
+      };
+      p = false;
+      l = -1;
+      h = function(e2, t2) {
+        p || (d(function(e3) {
+          l = e3.value;
+        }), p = true);
+        var n2, i2 = function(t3) {
+          l > -1 && e2(t3);
+        }, f2 = r("CLS", 0), s2 = 0, m2 = [], v2 = function(e3) {
+          if (!e3.hadRecentInput) {
+            var t3 = m2[0], i3 = m2[m2.length - 1];
+            s2 && e3.startTime - i3.startTime < 1e3 && e3.startTime - t3.startTime < 5e3 ? (s2 += e3.value, m2.push(e3)) : (s2 = e3.value, m2 = [e3]), s2 > f2.value && (f2.value = s2, f2.entries = m2, n2());
+          }
+        }, h2 = a("layout-shift", v2);
+        h2 && (n2 = c(i2, f2, t2), o(function() {
+          h2.takeRecords().map(v2), n2(true);
+        }), u(function() {
+          s2 = 0, l = -1, f2 = r("CLS", 0), n2 = c(i2, f2, t2);
+        }));
+      };
+      T = { passive: true, capture: true };
+      y = /* @__PURE__ */ new Date();
+      g = function(i2, r2) {
+        e || (e = r2, t = i2, n = /* @__PURE__ */ new Date(), w(removeEventListener), E());
+      };
+      E = function() {
+        if (t >= 0 && t < n - y) {
+          var r2 = { entryType: "first-input", name: e.type, target: e.target, cancelable: e.cancelable, startTime: e.timeStamp, processingStart: e.timeStamp + t };
+          i.forEach(function(e2) {
+            e2(r2);
+          }), i = [];
+        }
+      };
+      S = function(e2) {
+        if (e2.cancelable) {
+          var t2 = (e2.timeStamp > 1e12 ? /* @__PURE__ */ new Date() : performance.now()) - e2.timeStamp;
+          "pointerdown" == e2.type ? function(e3, t3) {
+            var n2 = function() {
+              g(e3, t3), r2();
+            }, i2 = function() {
+              r2();
+            }, r2 = function() {
+              removeEventListener("pointerup", n2, T), removeEventListener("pointercancel", i2, T);
+            };
+            addEventListener("pointerup", n2, T), addEventListener("pointercancel", i2, T);
+          }(t2, e2) : g(t2, e2);
+        }
+      };
+      w = function(e2) {
+        ["mousedown", "keydown", "touchstart", "pointerdown"].forEach(function(t2) {
+          return e2(t2, S, T);
+        });
+      };
+      L = function(n2, f2) {
+        var s2, m2 = v(), d2 = r("FID"), p2 = function(e2) {
+          e2.startTime < m2.firstHiddenTime && (d2.value = e2.processingStart - e2.startTime, d2.entries.push(e2), s2(true));
+        }, l2 = a("first-input", p2);
+        s2 = c(n2, d2, f2), l2 && o(function() {
+          l2.takeRecords().map(p2), l2.disconnect();
+        }, true), l2 && u(function() {
+          var a2;
+          d2 = r("FID"), s2 = c(n2, d2, f2), i = [], t = -1, e = null, w(addEventListener), a2 = p2, i.push(a2), E();
+        });
+      };
+      b = {};
+      F = function(e2, t2) {
+        var n2, i2 = v(), f2 = r("LCP"), s2 = function(e3) {
+          var t3 = e3.startTime;
+          t3 < i2.firstHiddenTime && (f2.value = t3, f2.entries.push(e3), n2());
+        }, m2 = a("largest-contentful-paint", s2);
+        if (m2) {
+          n2 = c(e2, f2, t2);
+          var d2 = function() {
+            b[f2.id] || (m2.takeRecords().map(s2), m2.disconnect(), b[f2.id] = true, n2(true));
+          };
+          ["keydown", "click"].forEach(function(e3) {
+            addEventListener(e3, d2, { once: true, capture: true });
+          }), o(d2, true), u(function(i3) {
+            f2 = r("LCP"), n2 = c(e2, f2, t2), requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                f2.value = performance.now() - i3.timeStamp, b[f2.id] = true, n2(true);
+              });
+            });
+          });
+        }
+      };
+      P = function(e2) {
+        var t2, n2 = r("TTFB");
+        t2 = function() {
+          try {
+            var t3 = performance.getEntriesByType("navigation")[0] || function() {
+              var e3 = performance.timing, t4 = { entryType: "navigation", startTime: 0 };
+              for (var n3 in e3) "navigationStart" !== n3 && "toJSON" !== n3 && (t4[n3] = Math.max(e3[n3] - e3.navigationStart, 0));
+              return t4;
+            }();
+            if (n2.value = n2.delta = t3.responseStart, n2.value < 0 || n2.value > performance.now()) return;
+            n2.entries = [t3], e2(n2);
+          } catch (e3) {
+          }
+        }, "complete" === document.readyState ? setTimeout(t2, 0) : addEventListener("load", function() {
+          return setTimeout(t2, 0);
+        });
+      };
+    }
+  });
+
   // src/App.tsx
   var import_react10 = __toESM(require_react());
   var import_client = __toESM(require_client());
@@ -24736,32 +24920,32 @@
 
   // node_modules/@emotion/hash/dist/emotion-hash.esm.js
   function murmur2(str) {
-    var h = 0;
-    var k, i = 0, len = str.length;
-    for (; len >= 4; ++i, len -= 4) {
-      k = str.charCodeAt(i) & 255 | (str.charCodeAt(++i) & 255) << 8 | (str.charCodeAt(++i) & 255) << 16 | (str.charCodeAt(++i) & 255) << 24;
+    var h2 = 0;
+    var k, i2 = 0, len = str.length;
+    for (; len >= 4; ++i2, len -= 4) {
+      k = str.charCodeAt(i2) & 255 | (str.charCodeAt(++i2) & 255) << 8 | (str.charCodeAt(++i2) & 255) << 16 | (str.charCodeAt(++i2) & 255) << 24;
       k = /* Math.imul(k, m): */
       (k & 65535) * 1540483477 + ((k >>> 16) * 59797 << 16);
       k ^= /* k >>> r: */
       k >>> 24;
-      h = /* Math.imul(k, m): */
+      h2 = /* Math.imul(k, m): */
       (k & 65535) * 1540483477 + ((k >>> 16) * 59797 << 16) ^ /* Math.imul(h, m): */
-      (h & 65535) * 1540483477 + ((h >>> 16) * 59797 << 16);
+      (h2 & 65535) * 1540483477 + ((h2 >>> 16) * 59797 << 16);
     }
     switch (len) {
       case 3:
-        h ^= (str.charCodeAt(i + 2) & 255) << 16;
+        h2 ^= (str.charCodeAt(i2 + 2) & 255) << 16;
       case 2:
-        h ^= (str.charCodeAt(i + 1) & 255) << 8;
+        h2 ^= (str.charCodeAt(i2 + 1) & 255) << 8;
       case 1:
-        h ^= str.charCodeAt(i) & 255;
-        h = /* Math.imul(h, m): */
-        (h & 65535) * 1540483477 + ((h >>> 16) * 59797 << 16);
+        h2 ^= str.charCodeAt(i2) & 255;
+        h2 = /* Math.imul(h, m): */
+        (h2 & 65535) * 1540483477 + ((h2 >>> 16) * 59797 << 16);
     }
-    h ^= h >>> 13;
-    h = /* Math.imul(h, m): */
-    (h & 65535) * 1540483477 + ((h >>> 16) * 59797 << 16);
-    return ((h ^ h >>> 15) >>> 0).toString(36);
+    h2 ^= h2 >>> 13;
+    h2 = /* Math.imul(h, m): */
+    (h2 & 65535) * 1540483477 + ((h2 >>> 16) * 59797 << 16);
+    return ((h2 ^ h2 >>> 15) >>> 0).toString(36);
   }
 
   // node_modules/@griffel/core/runtime/utils/hashSequence.esm.js
@@ -24770,7 +24954,7 @@
     if (hashLength === SEQUENCE_HASH_LENGTH) {
       return value;
     }
-    for (let i = hashLength; i < SEQUENCE_HASH_LENGTH; i++) {
+    for (let i2 = hashLength; i2 < SEQUENCE_HASH_LENGTH; i2++) {
       value += "0";
     }
     return value;
@@ -24823,8 +25007,8 @@
     let sequenceMatch = "";
     const sequencesIds = new Array(arguments.length);
     let containsResetClassName = "";
-    for (let i = 0; i < arguments.length; i++) {
-      const className = arguments[i];
+    for (let i2 = 0; i2 < arguments.length; i2++) {
+      const className = arguments[i2];
       if (typeof className === "string" && className !== "") {
         const sequenceIndex = className.indexOf(SEQUENCE_PREFIX);
         if (sequenceIndex === -1) {
@@ -24847,7 +25031,7 @@ Source string: ${className}`);
             resultClassName += className.slice(0, sequenceIndex);
           }
           sequenceMatch += sequenceId;
-          sequencesIds[i] = sequenceId;
+          sequencesIds[i2] = sequenceId;
         }
         if (true) {
           if (className.indexOf(SEQUENCE_PREFIX, sequenceIndex + 1) !== -1) {
@@ -24864,21 +25048,21 @@ Source string: ${className}`);
       return resultClassName + mergeClassesResult;
     }
     const sequenceMappings = [];
-    for (let i = 0; i < arguments.length; i++) {
-      const sequenceId = sequencesIds[i];
+    for (let i2 = 0; i2 < arguments.length; i2++) {
+      const sequenceId = sequencesIds[i2];
       if (sequenceId) {
         const sequenceMapping = DEFINITION_LOOKUP_TABLE[sequenceId];
         if (sequenceMapping) {
           sequenceMappings.push(sequenceMapping[LOOKUP_DEFINITIONS_INDEX]);
           if (true) {
             if (dir !== null && dir !== sequenceMapping[LOOKUP_DIR_INDEX]) {
-              console.error(`mergeClasses(): a passed string contains an identifier (${sequenceId}) that has different direction (dir="${sequenceMapping[1] ? "rtl" : "ltr"}") setting than other classes. This is not supported. Source string: ${arguments[i]}`);
+              console.error(`mergeClasses(): a passed string contains an identifier (${sequenceId}) that has different direction (dir="${sequenceMapping[1] ? "rtl" : "ltr"}") setting than other classes. This is not supported. Source string: ${arguments[i2]}`);
             }
           }
           dir = sequenceMapping[LOOKUP_DIR_INDEX];
         } else {
           if (true) {
-            console.error(`mergeClasses(): a passed string contains an identifier (${sequenceId}) that does not match any entry in cache. Source string: ${arguments[i]}`);
+            console.error(`mergeClasses(): a passed string contains an identifier (${sequenceId}) that does not match any entry in cache. Source string: ${arguments[i2]}`);
           }
         }
       }
@@ -25031,7 +25215,7 @@ Source string: ${className}`);
     var _a;
     try {
       return Boolean(typeof window !== "undefined" && ((_a = window.sessionStorage) === null || _a === void 0 ? void 0 : _a.getItem("__GRIFFEL_DEVTOOLS__")));
-    } catch (e) {
+    } catch (e2) {
       return false;
     }
   })();
@@ -25180,16 +25364,16 @@ Source string: ${className}`);
   function safeInsertRule(sheet, ruleCSS) {
     try {
       sheet.insertRule(ruleCSS);
-    } catch (e) {
+    } catch (e2) {
       if (!ignoreSuffixesRegex.test(ruleCSS)) {
-        console.error(`There was a problem inserting the following rule: "${ruleCSS}"`, e);
+        console.error(`There was a problem inserting the following rule: "${ruleCSS}"`, e2);
       }
     }
   }
 
   // node_modules/@griffel/core/renderer/createDOMRenderer.esm.js
   var lastIndex = 0;
-  var defaultCompareMediaQueries = (a, b) => a < b ? -1 : a > b ? 1 : 0;
+  var defaultCompareMediaQueries = (a2, b2) => a2 < b2 ? -1 : a2 > b2 ? 1 : 0;
   function createDOMRenderer(targetDocument = typeof document === "undefined" ? void 0 : document, options = {}) {
     const {
       classNameHashSalt,
@@ -25208,8 +25392,8 @@ Source string: ${className}`);
       insertCSSRules(cssRules2) {
         for (const styleBucketName in cssRules2) {
           const cssRulesForBucket = cssRules2[styleBucketName];
-          for (let i = 0, l = cssRulesForBucket.length; i < l; i++) {
-            const [ruleCSS, metadata] = normalizeCSSBucketEntry(cssRulesForBucket[i]);
+          for (let i2 = 0, l2 = cssRulesForBucket.length; i2 < l2; i2++) {
+            const [ruleCSS, metadata] = normalizeCSSBucketEntry(cssRulesForBucket[i2]);
             const sheet = getStyleSheetForBucket(styleBucketName, targetDocument, insertionPoint || null, renderer, metadata);
             if (renderer.insertionCache[ruleCSS]) {
               continue;
@@ -25301,9 +25485,9 @@ Source string: ${className}`);
     return result === null || result === void 0 ? void 0 : result.loc;
   }
   function findUserMakeStyleCallInStacks(stacks) {
-    for (let i = stacks.length - 1; i >= 0; --i) {
-      if (stacks[i].includes("at getSourceURLfromError")) {
-        return stacks[i + 3];
+    for (let i2 = stacks.length - 1; i2 >= 0; --i2) {
+      if (stacks[i2].includes("at getSourceURLfromError")) {
+        return stacks[i2 + 3];
       }
     }
     return void 0;
@@ -25374,8 +25558,8 @@ Source string: ${className}`);
     return value;
   }
   function getValuesAsList(value) {
-    return value.replace(/ +/g, " ").split(" ").map(function(i) {
-      return i.trim();
+    return value.replace(/ +/g, " ").split(" ").map(function(i2) {
+      return i2.trim();
     }).filter(Boolean).reduce(function(_ref2, item) {
       var list = _ref2.list, state = _ref2.state;
       var openParansCount = (item.match(/\(/g) || []).length;
@@ -26056,9 +26240,9 @@ Source string: ${className}`);
     var post = offset - 1;
     var rule = offset === 0 ? rules : [""];
     var size = sizeof(rule);
-    for (var i = 0, j = 0, k = 0; i < index; ++i)
-      for (var x = 0, y = substr(value, post + 1, post = abs(j = points[i])), z = value; x < size; ++x)
-        if (z = trim(j > 0 ? rule[x] + " " + y : replace(y, /&\f/g, rule[x])))
+    for (var i2 = 0, j = 0, k = 0; i2 < index; ++i2)
+      for (var x = 0, y2 = substr(value, post + 1, post = abs(j = points[i2])), z = value; x < size; ++x)
+        if (z = trim(j > 0 ? rule[x] + " " + y2 : replace(y2, /&\f/g, rule[x])))
           props[k++] = z;
     return node(value, root, parent, offset === 0 ? RULESET : type, props, children, length2, siblings);
   }
@@ -26072,8 +26256,8 @@ Source string: ${className}`);
   // node_modules/stylis/src/Serializer.js
   function serialize(children, callback) {
     var output = "";
-    for (var i = 0; i < children.length; i++)
-      output += callback(children[i], i, children, callback) || "";
+    for (var i2 = 0; i2 < children.length; i2++)
+      output += callback(children[i2], i2, children, callback) || "";
     return output;
   }
   function stringify(element, index, children, callback) {
@@ -26098,8 +26282,8 @@ Source string: ${className}`);
     var length2 = sizeof(collection);
     return function(element, index, children, callback) {
       var output = "";
-      for (var i = 0; i < length2; i++)
-        output += collection[i](element, index, children, callback) || "";
+      for (var i2 = 0; i2 < length2; i2++)
+        output += collection[i2](element, index, children, callback) || "";
       return output;
     };
   }
@@ -26290,7 +26474,7 @@ Source string: ${className}`);
   // node_modules/@griffel/core/runtime/stylis/sortClassesInAtRulesPlugin.esm.js
   var sortClassesInAtRulesPlugin = (element) => {
     if (isAtRuleElement(element) && Array.isArray(element.children)) {
-      element.children.sort((a, b) => a.props[0] > b.props[0] ? 1 : -1);
+      element.children.sort((a2, b2) => a2.props[0] > b2.props[0] ? 1 : -1);
     }
   };
 
@@ -26347,11 +26531,11 @@ Source string: ${className}`);
       supports
     } = atRules;
     const classNameSelector = `.${className}`;
-    const cssDeclaration = Array.isArray(value) ? `${value.map((v) => `${hyphenateProperty(property)}: ${v}`).join(";")};` : `${hyphenateProperty(property)}: ${value};`;
+    const cssDeclaration = Array.isArray(value) ? `${value.map((v2) => `${hyphenateProperty(property)}: ${v2}`).join(";")};` : `${hyphenateProperty(property)}: ${value};`;
     let cssRule = createCSSRule(classNameSelector, cssDeclaration, selectors);
     if (rtlProperty && rtlClassName) {
       const rtlClassNameSelector = `.${rtlClassName}`;
-      const rtlCSSDeclaration = Array.isArray(rtlValue) ? `${rtlValue.map((v) => `${hyphenateProperty(rtlProperty)}: ${v}`).join(";")};` : `${hyphenateProperty(rtlProperty)}: ${rtlValue};`;
+      const rtlCSSDeclaration = Array.isArray(rtlValue) ? `${rtlValue.map((v2) => `${hyphenateProperty(rtlProperty)}: ${v2}`).join(";")};` : `${hyphenateProperty(rtlProperty)}: ${rtlValue};`;
       cssRule += createCSSRule(rtlClassNameSelector, rtlCSSDeclaration, selectors);
     }
     if (media) {
@@ -26593,7 +26777,7 @@ Source string: ${className}`);
   function warnAboutUnresolvedRule(property, value) {
     const message = /* @__PURE__ */ (() => {
       const ruleText = JSON.stringify(value, null, 2);
-      const message2 = ["@griffel/react: A rule was not resolved to CSS properly. Please check your `makeStyles` or `makeResetStyles` calls for following:", " ".repeat(2) + "makeStyles({", " ".repeat(4) + `[slot]: {`, " ".repeat(6) + `"${property}": ${ruleText.split("\n").map((l, n) => " ".repeat(n === 0 ? 0 : 6) + l).join("\n")}`, " ".repeat(4) + "}", " ".repeat(2) + `})`, ""];
+      const message2 = ["@griffel/react: A rule was not resolved to CSS properly. Please check your `makeStyles` or `makeResetStyles` calls for following:", " ".repeat(2) + "makeStyles({", " ".repeat(4) + `[slot]: {`, " ".repeat(6) + `"${property}": ${ruleText.split("\n").map((l2, n2) => " ".repeat(n2 === 0 ? 0 : 6) + l2).join("\n")}`, " ".repeat(4) + "}", " ".repeat(2) + `})`, ""];
       if (property.indexOf("&") === -1) {
         message2.push(`It looks that you're are using a nested selector, but it is missing an ampersand placeholder where the generated class name should be injected.`);
         message2.push(`Try to update a property to include it i.e "${property}" => "&${property}".`);
@@ -26724,13 +26908,13 @@ Source string: ${className}`);
             rtlAnimationName = HASH_PREFIX + murmur2(rtlKeyframeCSS);
             rtlKeyframeRules = compileKeyframesCSS(rtlAnimationName, rtlKeyframeCSS);
           }
-          for (let i = 0; i < keyframeRules.length; i++) {
+          for (let i2 = 0; i2 < keyframeRules.length; i2++) {
             pushToCSSRules(
               cssRulesByBucket,
               // keyframes styles should be inserted into own bucket
               "k",
-              keyframeRules[i],
-              rtlKeyframeRules[i],
+              keyframeRules[i2],
+              rtlKeyframeRules[i2],
               atRules.media,
               // keyframes always have default priority
               0
@@ -26758,24 +26942,24 @@ Source string: ${className}`);
         }
         const key = hashPropertyKey(selector, property, atRules);
         const className = hashClassName({
-          value: value.map((v) => (v !== null && v !== void 0 ? v : "").toString()).join(";"),
+          value: value.map((v2) => (v2 !== null && v2 !== void 0 ? v2 : "").toString()).join(";"),
           salt: classNameHashSalt,
           selector,
           property
         }, atRules);
-        const rtlDefinitions = value.map((v) => convertProperty(property, v));
-        const rtlPropertyConsistent = !rtlDefinitions.some((v) => v.key !== rtlDefinitions[0].key);
+        const rtlDefinitions = value.map((v2) => convertProperty(property, v2));
+        const rtlPropertyConsistent = !rtlDefinitions.some((v2) => v2.key !== rtlDefinitions[0].key);
         if (!rtlPropertyConsistent) {
           if (true) {
             console.error("makeStyles(): mixing CSS fallback values which result in multiple CSS properties in RTL is not supported.");
           }
           continue;
         }
-        const flippedInRtl = rtlDefinitions[0].key !== property || rtlDefinitions.some((v, i) => v.value !== value[i]);
+        const flippedInRtl = rtlDefinitions[0].key !== property || rtlDefinitions.some((v2, i2) => v2.value !== value[i2]);
         const rtlClassName = flippedInRtl ? hashClassName({
-          value: rtlDefinitions.map((v) => {
+          value: rtlDefinitions.map((v2) => {
             var _a;
-            return ((_a = v === null || v === void 0 ? void 0 : v.value) !== null && _a !== void 0 ? _a : "").toString();
+            return ((_a = v2 === null || v2 === void 0 ? void 0 : v2.value) !== null && _a !== void 0 ? _a : "").toString();
           }).join(";"),
           salt: classNameHashSalt,
           property: rtlDefinitions[0].key,
@@ -26784,7 +26968,7 @@ Source string: ${className}`);
         const rtlCompileOptions = flippedInRtl ? {
           rtlClassName,
           rtlProperty: rtlDefinitions[0].key,
-          rtlValue: rtlDefinitions.map((d) => d.value)
+          rtlValue: rtlDefinitions.map((d2) => d2.value)
         } : void 0;
         const styleBucketName = getStyleBucketName(selectors, atRules);
         const [ltrCSS, rtlCSS] = compileAtomicCSSRule(Object.assign({
@@ -26985,7 +27169,7 @@ Source string: ${className}`);
       }
       dispatcher.useContext({});
       return true;
-    } catch (e) {
+    } catch (e2) {
       return false;
     }
   }
@@ -27781,8 +27965,8 @@ You can check this by searching up for matching entries in a lockfile produced b
     }
     kwin.HTMLElement.prototype.focus = focus;
     const shadowTargets = /* @__PURE__ */ new Set();
-    const focusOutHandler = (e) => {
-      const target = e.target;
+    const focusOutHandler = (e2) => {
+      const target = e2.target;
       if (!target) {
         return;
       }
@@ -27792,17 +27976,17 @@ You can check this by searching up for matching entries in a lockfile produced b
         // Allows the event to bubble past an open shadow root
         composed: true,
         detail: {
-          originalEvent: e
+          originalEvent: e2
         }
       });
       target.dispatchEvent(event);
     };
-    const focusInHandler = (e) => {
-      const target = e.target;
+    const focusInHandler = (e2) => {
+      const target = e2.target;
       if (!target) {
         return;
       }
-      let node2 = e.composedPath()[0];
+      let node2 = e2.composedPath()[0];
       const currentShadows = /* @__PURE__ */ new Set();
       while (node2) {
         if (node2.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
@@ -27822,7 +28006,7 @@ You can check this by searching up for matching entries in a lockfile produced b
           }
         }
       }
-      onFocusIn(target, e.relatedTarget || void 0);
+      onFocusIn(target, e2.relatedTarget || void 0);
     };
     const onFocusIn = (target, relatedTarget, originalEvent) => {
       var _a;
@@ -27930,14 +28114,14 @@ You can check this by searching up for matching entries in a lockfile produced b
   var KeyborgCore = class {
     constructor(win, props) {
       this._isNavigatingWithKeyboard_DO_NOT_USE = false;
-      this._onFocusIn = (e) => {
+      this._onFocusIn = (e2) => {
         if (this._isMouseOrTouchUsedTimer) {
           return;
         }
         if (this.isNavigatingWithKeyboard) {
           return;
         }
-        const details = e.detail;
+        const details = e2.detail;
         if (!details.relatedTarget) {
           return;
         }
@@ -27946,8 +28130,8 @@ You can check this by searching up for matching entries in a lockfile produced b
         }
         this.isNavigatingWithKeyboard = true;
       };
-      this._onMouseDown = (e) => {
-        if (e.buttons === 0 || e.clientX === 0 && e.clientY === 0 && e.screenX === 0 && e.screenY === 0) {
+      this._onMouseDown = (e2) => {
+        if (e2.buttons === 0 || e2.clientX === 0 && e2.clientY === 0 && e2.screenX === 0 && e2.screenY === 0) {
           return;
         }
         this._onMouseOrTouch();
@@ -27964,14 +28148,14 @@ You can check this by searching up for matching entries in a lockfile produced b
         }
         this.isNavigatingWithKeyboard = false;
       };
-      this._onKeyDown = (e) => {
+      this._onKeyDown = (e2) => {
         const isNavigatingWithKeyboard = this.isNavigatingWithKeyboard;
         if (isNavigatingWithKeyboard) {
-          if (this._shouldDismissKeyboardNavigation(e)) {
+          if (this._shouldDismissKeyboardNavigation(e2)) {
             this._scheduleDismiss();
           }
         } else {
-          if (this._shouldTriggerKeyboardNavigation(e)) {
+          if (this._shouldTriggerKeyboardNavigation(e2)) {
             this.isNavigatingWithKeyboard = true;
           }
         }
@@ -28046,22 +28230,22 @@ You can check this by searching up for matching entries in a lockfile produced b
     /**
      * @returns whether the keyboard event should trigger keyboard navigation mode
      */
-    _shouldTriggerKeyboardNavigation(e) {
+    _shouldTriggerKeyboardNavigation(e2) {
       var _a;
-      if (e.key === "Tab") {
+      if (e2.key === "Tab") {
         return true;
       }
       const activeElement = (_a = this._win) == null ? void 0 : _a.document.activeElement;
-      const isTriggerKey = !this._triggerKeys || this._triggerKeys.has(e.keyCode);
+      const isTriggerKey = !this._triggerKeys || this._triggerKeys.has(e2.keyCode);
       const isEditable = activeElement && (activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA" || activeElement.isContentEditable);
       return isTriggerKey && !isEditable;
     }
     /**
      * @returns whether the keyboard event should dismiss keyboard navigation mode
      */
-    _shouldDismissKeyboardNavigation(e) {
+    _shouldDismissKeyboardNavigation(e2) {
       var _a;
-      return (_a = this._dismissKeys) == null ? void 0 : _a.has(e.keyCode);
+      return (_a = this._dismissKeys) == null ? void 0 : _a.has(e2.keyCode);
     }
     _scheduleDismiss() {
       const win = this._win;
@@ -28200,13 +28384,13 @@ You can check this by searching up for matching entries in a lockfile produced b
         disposeCurrentElement();
       }
     });
-    const keyborgListener = (e) => {
+    const keyborgListener = (e2) => {
       disposeCurrentElement();
-      const target = e.composedPath()[0];
+      const target = e2.composedPath()[0];
       registerElementIfNavigating(target);
     };
-    const blurListener = (e) => {
-      if (!e.relatedTarget || isHTMLElement(e.relatedTarget) && !scope.contains(e.relatedTarget)) {
+    const blurListener = (e2) => {
+      if (!e2.relatedTarget || isHTMLElement(e2.relatedTarget) && !scope.contains(e2.relatedTarget)) {
         disposeCurrentElement();
       }
     };
@@ -29576,17 +29760,17 @@ You can check this by searching up for matching entries in a lockfile produced b
       }
     };
   };
-  function shallowMerge(a, b) {
-    if (a && b) {
+  function shallowMerge(a2, b2) {
+    if (a2 && b2) {
       return {
-        ...a,
-        ...b
+        ...a2,
+        ...b2
       };
     }
-    if (a) {
-      return a;
+    if (a2) {
+      return a2;
     }
-    return b;
+    return b2;
   }
   function useTheme() {
     return React27.useContext(ThemeContext);
@@ -29725,21 +29909,21 @@ You can check this by searching up for matching entries in a lockfile produced b
     if (obj === null || typeof obj === "undefined") {
       return;
     }
-    let i;
-    let l;
+    let i2;
+    let l2;
     if (typeof obj !== "object") {
       obj = [obj];
     }
     if (isArray(obj)) {
-      for (i = 0, l = obj.length; i < l; i++) {
-        fn.call(null, obj[i], i, obj);
+      for (i2 = 0, l2 = obj.length; i2 < l2; i2++) {
+        fn.call(null, obj[i2], i2, obj);
       }
     } else {
       const keys = allOwnKeys ? Object.getOwnPropertyNames(obj) : Object.keys(obj);
       const len = keys.length;
       let key;
-      for (i = 0; i < len; i++) {
-        key = keys[i];
+      for (i2 = 0; i2 < len; i2++) {
+        key = keys[i2];
         fn.call(null, obj[key], key, obj);
       }
     }
@@ -29747,10 +29931,10 @@ You can check this by searching up for matching entries in a lockfile produced b
   function findKey(obj, key) {
     key = key.toLowerCase();
     const keys = Object.keys(obj);
-    let i = keys.length;
+    let i2 = keys.length;
     let _key;
-    while (i-- > 0) {
-      _key = keys[i];
+    while (i2-- > 0) {
+      _key = keys[i2];
       if (key === _key.toLowerCase()) {
         return _key;
       }
@@ -29777,20 +29961,20 @@ You can check this by searching up for matching entries in a lockfile produced b
         result[targetKey] = val;
       }
     };
-    for (let i = 0, l = arguments.length; i < l; i++) {
-      arguments[i] && forEach(arguments[i], assignValue);
+    for (let i2 = 0, l2 = arguments.length; i2 < l2; i2++) {
+      arguments[i2] && forEach(arguments[i2], assignValue);
     }
     return result;
   }
-  var extend = (a, b, thisArg, { allOwnKeys } = {}) => {
-    forEach(b, (val, key) => {
+  var extend = (a2, b2, thisArg, { allOwnKeys } = {}) => {
+    forEach(b2, (val, key) => {
       if (thisArg && isFunction2(val)) {
-        a[key] = bind(val, thisArg);
+        a2[key] = bind(val, thisArg);
       } else {
-        a[key] = val;
+        a2[key] = val;
       }
     }, { allOwnKeys });
-    return a;
+    return a2;
   };
   var stripBOM = (content) => {
     if (content.charCodeAt(0) === 65279) {
@@ -29808,16 +29992,16 @@ You can check this by searching up for matching entries in a lockfile produced b
   };
   var toFlatObject = (sourceObj, destObj, filter3, propFilter) => {
     let props;
-    let i;
+    let i2;
     let prop;
     const merged = {};
     destObj = destObj || {};
     if (sourceObj == null) return destObj;
     do {
       props = Object.getOwnPropertyNames(sourceObj);
-      i = props.length;
-      while (i-- > 0) {
-        prop = props[i];
+      i2 = props.length;
+      while (i2-- > 0) {
+        prop = props[i2];
         if ((!propFilter || propFilter(prop, sourceObj, destObj)) && !merged[prop]) {
           destObj[prop] = sourceObj[prop];
           merged[prop] = true;
@@ -29839,11 +30023,11 @@ You can check this by searching up for matching entries in a lockfile produced b
   var toArray = (thing) => {
     if (!thing) return null;
     if (isArray(thing)) return thing;
-    let i = thing.length;
-    if (!isNumber2(i)) return null;
-    const arr = new Array(i);
-    while (i-- > 0) {
-      arr[i] = thing[i];
+    let i2 = thing.length;
+    if (!isNumber2(i2)) return null;
+    const arr = new Array(i2);
+    while (i2-- > 0) {
+      arr[i2] = thing[i2];
     }
     return arr;
   };
@@ -29873,7 +30057,7 @@ You can check this by searching up for matching entries in a lockfile produced b
   var toCamelCase = (str) => {
     return str.toLowerCase().replace(
       /[-_\s]([a-z\d])(\w*)/g,
-      function replacer(m, p1, p2) {
+      function replacer(m2, p1, p2) {
         return p1.toUpperCase() + p2;
       }
     );
@@ -29945,19 +30129,19 @@ You can check this by searching up for matching entries in a lockfile produced b
   }
   var toJSONObject = (obj) => {
     const stack = new Array(10);
-    const visit = (source, i) => {
+    const visit = (source, i2) => {
       if (isObject3(source)) {
         if (stack.indexOf(source) >= 0) {
           return;
         }
         if (!("toJSON" in source)) {
-          stack[i] = source;
+          stack[i2] = source;
           const target = isArray(source) ? [] : {};
           forEach(source, (value, key) => {
-            const reducedValue = visit(value, i + 1);
+            const reducedValue = visit(value, i2 + 1);
             !isUndefined(reducedValue) && (target[key] = reducedValue);
           });
-          stack[i] = void 0;
+          stack[i2] = void 0;
           return target;
         }
       }
@@ -30135,9 +30319,9 @@ You can check this by searching up for matching entries in a lockfile produced b
   }
   function renderKey(path, key, dots) {
     if (!path) return key;
-    return path.concat(key).map(function each(token2, i) {
+    return path.concat(key).map(function each(token2, i2) {
       token2 = removeBrackets(token2);
-      return !dots && i ? "[" + token2 + "]" : token2;
+      return !dots && i2 ? "[" + token2 + "]" : token2;
     }).join(dots ? "." : "");
   }
   function isFlatArray(arr) {
@@ -30357,9 +30541,9 @@ You can check this by searching up for matching entries in a lockfile produced b
      * @returns {void}
      */
     forEach(fn) {
-      utils_default.forEach(this.handlers, function forEachHandler(h) {
-        if (h !== null) {
-          fn(h);
+      utils_default.forEach(this.handlers, function forEachHandler(h2) {
+        if (h2 !== null) {
+          fn(h2);
         }
       });
     }
@@ -30439,11 +30623,11 @@ You can check this by searching up for matching entries in a lockfile produced b
   function arrayToObject2(arr) {
     const obj = {};
     const keys = Object.keys(arr);
-    let i;
+    let i2;
     const len = keys.length;
     let key;
-    for (i = 0; i < len; i++) {
-      key = keys[i];
+    for (i2 = 0; i2 < len; i2++) {
+      key = keys[i2];
       obj[key] = arr[key];
     }
     return obj;
@@ -30489,9 +30673,9 @@ You can check this by searching up for matching entries in a lockfile produced b
       try {
         (parser || JSON.parse)(rawValue);
         return utils_default.trim(rawValue);
-      } catch (e) {
-        if (e.name !== "SyntaxError") {
-          throw e;
+      } catch (e2) {
+        if (e2.name !== "SyntaxError") {
+          throw e2;
         }
       }
     }
@@ -30553,12 +30737,12 @@ You can check this by searching up for matching entries in a lockfile produced b
         const strictJSONParsing = !silentJSONParsing && JSONRequested;
         try {
           return JSON.parse(data);
-        } catch (e) {
+        } catch (e2) {
           if (strictJSONParsing) {
-            if (e.name === "SyntaxError") {
-              throw AxiosError_default.from(e, AxiosError_default.ERR_BAD_RESPONSE, this, null, this.response);
+            if (e2.name === "SyntaxError") {
+              throw AxiosError_default.from(e2, AxiosError_default.ERR_BAD_RESPONSE, this, null, this.response);
             }
-            throw e;
+            throw e2;
           }
         }
       }
@@ -30616,11 +30800,11 @@ You can check this by searching up for matching entries in a lockfile produced b
     const parsed = {};
     let key;
     let val;
-    let i;
+    let i2;
     rawHeaders && rawHeaders.split("\n").forEach(function parser(line2) {
-      i = line2.indexOf(":");
-      key = line2.substring(0, i).trim().toLowerCase();
-      val = line2.substring(i + 1).trim();
+      i2 = line2.indexOf(":");
+      key = line2.substring(0, i2).trim().toLowerCase();
+      val = line2.substring(i2 + 1).trim();
       if (!key || parsed[key] && ignoreDuplicateOf[key]) {
         return;
       }
@@ -30674,7 +30858,7 @@ You can check this by searching up for matching entries in a lockfile produced b
     }
   }
   function formatHeader(header) {
-    return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g, (w, char2, str) => {
+    return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g, (w2, char2, str) => {
       return char2.toUpperCase() + str;
     });
   }
@@ -30771,10 +30955,10 @@ You can check this by searching up for matching entries in a lockfile produced b
     }
     clear(matcher) {
       const keys = Object.keys(this);
-      let i = keys.length;
+      let i2 = keys.length;
       let deleted = false;
-      while (i--) {
-        const key = keys[i];
+      while (i2--) {
+        const key = keys[i2];
         if (!matcher || matchHeaderValue(this, this[key], key, matcher, true)) {
           delete this[key];
           deleted = true;
@@ -30925,11 +31109,11 @@ You can check this by searching up for matching entries in a lockfile produced b
       }
       bytes[head] = chunkLength;
       timestamps[head] = now;
-      let i = tail;
+      let i2 = tail;
       let bytesCount = 0;
-      while (i !== head) {
-        bytesCount += bytes[i++];
-        i = i % samplesCount;
+      while (i2 !== head) {
+        bytesCount += bytes[i2++];
+        i2 = i2 % samplesCount;
       }
       head = (head + 1) % samplesCount;
       if (head === tail) {
@@ -30983,9 +31167,9 @@ You can check this by searching up for matching entries in a lockfile produced b
   var progressEventReducer = (listener, isDownloadStream, freq = 3) => {
     let bytesNotified = 0;
     const _speedometer = speedometer_default(50, 250);
-    return throttle_default((e) => {
-      const loaded = e.loaded;
-      const total = e.lengthComputable ? e.total : void 0;
+    return throttle_default((e2) => {
+      const loaded = e2.loaded;
+      const total = e2.lengthComputable ? e2.total : void 0;
       const progressBytes = loaded - bytesNotified;
       const rate = _speedometer(progressBytes);
       const inRange = loaded <= total;
@@ -30997,7 +31181,7 @@ You can check this by searching up for matching entries in a lockfile produced b
         bytes: progressBytes,
         rate: rate ? rate : void 0,
         estimated: rate && total && inRange ? (total - loaded) / rate : void 0,
-        event: e,
+        event: e2,
         lengthComputable: total != null,
         [isDownloadStream ? "download" : "upload"]: true
       };
@@ -31089,30 +31273,30 @@ You can check this by searching up for matching entries in a lockfile produced b
       }
       return source;
     }
-    function mergeDeepProperties(a, b, prop, caseless) {
-      if (!utils_default.isUndefined(b)) {
-        return getMergedValue(a, b, prop, caseless);
-      } else if (!utils_default.isUndefined(a)) {
-        return getMergedValue(void 0, a, prop, caseless);
+    function mergeDeepProperties(a2, b2, prop, caseless) {
+      if (!utils_default.isUndefined(b2)) {
+        return getMergedValue(a2, b2, prop, caseless);
+      } else if (!utils_default.isUndefined(a2)) {
+        return getMergedValue(void 0, a2, prop, caseless);
       }
     }
-    function valueFromConfig2(a, b) {
-      if (!utils_default.isUndefined(b)) {
-        return getMergedValue(void 0, b);
+    function valueFromConfig2(a2, b2) {
+      if (!utils_default.isUndefined(b2)) {
+        return getMergedValue(void 0, b2);
       }
     }
-    function defaultToConfig2(a, b) {
-      if (!utils_default.isUndefined(b)) {
-        return getMergedValue(void 0, b);
-      } else if (!utils_default.isUndefined(a)) {
-        return getMergedValue(void 0, a);
+    function defaultToConfig2(a2, b2) {
+      if (!utils_default.isUndefined(b2)) {
+        return getMergedValue(void 0, b2);
+      } else if (!utils_default.isUndefined(a2)) {
+        return getMergedValue(void 0, a2);
       }
     }
-    function mergeDirectKeys(a, b, prop) {
+    function mergeDirectKeys(a2, b2, prop) {
       if (prop in config2) {
-        return getMergedValue(a, b);
+        return getMergedValue(a2, b2);
       } else if (prop in config1) {
-        return getMergedValue(void 0, a);
+        return getMergedValue(void 0, a2);
       }
     }
     const mergeMap = {
@@ -31144,7 +31328,7 @@ You can check this by searching up for matching entries in a lockfile produced b
       socketPath: defaultToConfig2,
       responseEncoding: defaultToConfig2,
       validateStatus: mergeDirectKeys,
-      headers: (a, b, prop) => mergeDeepProperties(headersToObject(a), headersToObject(b), prop, true)
+      headers: (a2, b2, prop) => mergeDeepProperties(headersToObject(a2), headersToObject(b2), prop, true)
     };
     utils_default.forEach(Object.keys(Object.assign({}, config1, config2)), function computeConfigValue(prop) {
       const merge2 = mergeMap[prop] || mergeDeepProperties;
@@ -31392,10 +31576,10 @@ You can check this by searching up for matching entries in a lockfile produced b
     const iterator = readBytes(stream, chunkSize);
     let bytes = 0;
     let done;
-    let _onFinish = (e) => {
+    let _onFinish = (e2) => {
       if (!done) {
         done = true;
-        onFinish && onFinish(e);
+        onFinish && onFinish(e2);
       }
     };
     return new ReadableStream({
@@ -31434,7 +31618,7 @@ You can check this by searching up for matching entries in a lockfile produced b
   var test = (fn, ...args) => {
     try {
       return !!fn(...args);
-    } catch (e) {
+    } catch (e2) {
       return false;
     }
   };
@@ -31601,7 +31785,7 @@ You can check this by searching up for matching entries in a lockfile produced b
     if (fn) {
       try {
         Object.defineProperty(fn, "name", { value });
-      } catch (e) {
+      } catch (e2) {
       }
       Object.defineProperty(fn, "adapterName", { value });
     }
@@ -31615,8 +31799,8 @@ You can check this by searching up for matching entries in a lockfile produced b
       let nameOrAdapter;
       let adapter;
       const rejectedReasons = {};
-      for (let i = 0; i < length2; i++) {
-        nameOrAdapter = adapters[i];
+      for (let i2 = 0; i2 < length2; i2++) {
+        nameOrAdapter = adapters[i2];
         let id;
         adapter = nameOrAdapter;
         if (!isResolvedHandle(nameOrAdapter)) {
@@ -31628,15 +31812,15 @@ You can check this by searching up for matching entries in a lockfile produced b
         if (adapter) {
           break;
         }
-        rejectedReasons[id || "#" + i] = adapter;
+        rejectedReasons[id || "#" + i2] = adapter;
       }
       if (!adapter) {
         const reasons = Object.entries(rejectedReasons).map(
           ([id, state]) => `adapter ${id} ` + (state === false ? "is not supported by the environment" : "is not available in the build")
         );
-        let s = length2 ? reasons.length > 1 ? "since :\n" + reasons.map(renderReason).join("\n") : " " + renderReason(reasons[0]) : "as no adapter specified";
+        let s2 = length2 ? reasons.length > 1 ? "since :\n" + reasons.map(renderReason).join("\n") : " " + renderReason(reasons[0]) : "as no adapter specified";
         throw new AxiosError_default(
-          `There is no suitable adapter to dispatch the request ` + s,
+          `There is no suitable adapter to dispatch the request ` + s2,
           "ERR_NOT_SUPPORT"
         );
       }
@@ -31695,9 +31879,9 @@ You can check this by searching up for matching entries in a lockfile produced b
 
   // node_modules/axios/lib/helpers/validator.js
   var validators = {};
-  ["object", "boolean", "number", "function", "string", "symbol"].forEach((type, i) => {
+  ["object", "boolean", "number", "function", "string", "symbol"].forEach((type, i2) => {
     validators[type] = function validator(thing) {
-      return typeof thing === type || "a" + (i < 1 ? "n " : " ") + type;
+      return typeof thing === type || "a" + (i2 < 1 ? "n " : " ") + type;
     };
   });
   var deprecatedWarnings = {};
@@ -31735,9 +31919,9 @@ You can check this by searching up for matching entries in a lockfile produced b
       throw new AxiosError_default("options must be an object", AxiosError_default.ERR_BAD_OPTION_VALUE);
     }
     const keys = Object.keys(options);
-    let i = keys.length;
-    while (i-- > 0) {
-      const opt = keys[i];
+    let i2 = keys.length;
+    while (i2-- > 0) {
+      const opt = keys[i2];
       const validator = schema[opt];
       if (validator) {
         const value = options[opt];
@@ -31789,7 +31973,7 @@ You can check this by searching up for matching entries in a lockfile produced b
             } else if (stack && !String(err.stack).endsWith(stack.replace(/^.+\n.+\n/, ""))) {
               err.stack += "\n" + stack;
             }
-          } catch (e) {
+          } catch (e2) {
           }
         }
         throw err;
@@ -31853,7 +32037,7 @@ You can check this by searching up for matching entries in a lockfile produced b
         responseInterceptorChain.push(interceptor.fulfilled, interceptor.rejected);
       });
       let promise;
-      let i = 0;
+      let i2 = 0;
       let len;
       if (!synchronousRequestInterceptors) {
         const chain = [dispatchRequest.bind(this), void 0];
@@ -31861,17 +32045,17 @@ You can check this by searching up for matching entries in a lockfile produced b
         chain.push.apply(chain, responseInterceptorChain);
         len = chain.length;
         promise = Promise.resolve(config);
-        while (i < len) {
-          promise = promise.then(chain[i++], chain[i++]);
+        while (i2 < len) {
+          promise = promise.then(chain[i2++], chain[i2++]);
         }
         return promise;
       }
       len = requestInterceptorChain.length;
       let newConfig = config;
-      i = 0;
-      while (i < len) {
-        const onFulfilled = requestInterceptorChain[i++];
-        const onRejected = requestInterceptorChain[i++];
+      i2 = 0;
+      while (i2 < len) {
+        const onFulfilled = requestInterceptorChain[i2++];
+        const onRejected = requestInterceptorChain[i2++];
         try {
           newConfig = onFulfilled(newConfig);
         } catch (error) {
@@ -31884,10 +32068,10 @@ You can check this by searching up for matching entries in a lockfile produced b
       } catch (error) {
         return Promise.reject(error);
       }
-      i = 0;
+      i2 = 0;
       len = responseInterceptorChain.length;
-      while (i < len) {
-        promise = promise.then(responseInterceptorChain[i++], responseInterceptorChain[i++]);
+      while (i2 < len) {
+        promise = promise.then(responseInterceptorChain[i2++], responseInterceptorChain[i2++]);
       }
       return promise;
     }
@@ -31937,9 +32121,9 @@ You can check this by searching up for matching entries in a lockfile produced b
       const token2 = this;
       this.promise.then((cancel) => {
         if (!token2._listeners) return;
-        let i = token2._listeners.length;
-        while (i-- > 0) {
-          token2._listeners[i](cancel);
+        let i2 = token2._listeners.length;
+        while (i2-- > 0) {
+          token2._listeners[i2](cancel);
         }
         token2._listeners = null;
       });
@@ -32011,8 +32195,8 @@ You can check this by searching up for matching entries in a lockfile produced b
      */
     static source() {
       let cancel;
-      const token2 = new _CancelToken(function executor(c) {
-        cancel = c;
+      const token2 = new _CancelToken(function executor(c2) {
+        cancel = c2;
       });
       return {
         token: token2,
@@ -32182,8 +32366,8 @@ You can check this by searching up for matching entries in a lockfile produced b
           console.error("Error, status: " + response?.status);
           return false;
         }
-      } catch (e) {
-        console.error("Error: " + e?.response?.data);
+      } catch (e2) {
+        console.error("Error: " + e2?.response?.data);
         return false;
       }
     }
@@ -32208,8 +32392,8 @@ You can check this by searching up for matching entries in a lockfile produced b
           console.error("Error, status: " + response?.status);
           return false;
         }
-      } catch (e) {
-        console.error("Error: " + e?.response?.data);
+      } catch (e2) {
+        console.error("Error: " + e2?.response?.data);
         return false;
       }
     }
@@ -32234,8 +32418,8 @@ You can check this by searching up for matching entries in a lockfile produced b
           console.error("Error, status: " + response?.status);
           return void 0;
         }
-      } catch (e) {
-        console.error("Error: " + e?.response?.data);
+      } catch (e2) {
+        console.error("Error: " + e2?.response?.data);
         return void 0;
       }
     }
@@ -32260,8 +32444,8 @@ You can check this by searching up for matching entries in a lockfile produced b
           console.error("Error, status: " + response.status);
           return void 0;
         }
-      } catch (e) {
-        console.error("Error: " + e?.response?.data);
+      } catch (e2) {
+        console.error("Error: " + e2?.response?.data);
         return void 0;
       }
     }
@@ -32279,16 +32463,16 @@ You can check this by searching up for matching entries in a lockfile produced b
         if (response.status === 200) {
           let responseRecords = response.data;
           let storedRecords = new Array();
-          for (let i = 0; i < responseRecords.length; i++) {
-            storedRecords.push(responseRecords[i]);
+          for (let i2 = 0; i2 < responseRecords.length; i2++) {
+            storedRecords.push(responseRecords[i2]);
           }
           return storedRecords;
         } else {
           console.error("Error, status: " + response.status);
           return new Array();
         }
-      } catch (e) {
-        console.error("Error: " + e?.response?.data);
+      } catch (e2) {
+        console.error("Error: " + e2?.response?.data);
         return new Array();
       }
     }
@@ -32380,8 +32564,8 @@ You can check this by searching up for matching entries in a lockfile produced b
     embedApi() {
       return "http://localhost:7071/api/Embed";
     }
-    suppressSummariseFail() {
-      return "http://localhost:7071/api/SuppressSummariseFail";
+    testForSummariseFail() {
+      return "http://localhost:7071/api/TestForSummariseFail";
     }
     saveActivityApi() {
       return "http://localhost:7071/api/SaveActivity";
@@ -32479,8 +32663,8 @@ You can check this by searching up for matching entries in a lockfile produced b
     embedApi() {
       return "https://braid-api.azurewebsites.net/api/Embed";
     }
-    suppressSummariseFail() {
-      return "https://braid-api.azurewebsites.net/api/SuppressSummariseFail";
+    testForSummariseFail() {
+      return "https://braid-api.azurewebsites.net/api/TestForSummariseFail";
     }
     saveActivityApi() {
       return "https://braid-api.azurewebsites.net/api/SaveActivity";
@@ -32595,14 +32779,17 @@ You can check this by searching up for matching entries in a lockfile produced b
     let nodeWithKey = /* @__PURE__ */ import_react6.default.createElement("p", { key: value }, " ", /* @__PURE__ */ import_react6.default.createElement("a", { href: relatedUrl }, value), " ");
     return nodeWithKey;
   }
-  function splitByDoubleNewline(text) {
-    return text.split("\n\n").filter((str) => str.trim().length > 0);
+  function splitByNewlines(text) {
+    if (text.includes("\n\n")) {
+      return text.split("\n\n").filter((str) => str.trim().length > 0);
+    }
+    return text.split("\n").filter((str) => str.trim().length > 0);
   }
   function ChunkView(props) {
     let splitSummary = new Array();
     let url = void 0;
     if (props.chunk.storedSummary?.text) {
-      splitSummary = splitByDoubleNewline(props.chunk.storedSummary?.text);
+      splitSummary = splitByNewlines(props.chunk.storedSummary?.text);
     }
     url = props.chunk.url;
     return /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("p", null, /* @__PURE__ */ import_react6.default.createElement("b", null, uiAppName)), "\xA0", /* @__PURE__ */ import_react6.default.createElement("p", null, /* @__PURE__ */ import_react6.default.createElement("b", null, props.chunk.storedTitle?.text)), "\xA0", splitSummary.map((paragraph, index) => /* @__PURE__ */ import_react6.default.createElement("p", { key: index }, paragraph)), "\xA0", /* @__PURE__ */ import_react6.default.createElement("p", null, url ? /* @__PURE__ */ import_react6.default.createElement("a", { href: url }, url) : /* @__PURE__ */ import_react6.default.createElement("div", null)), "\xA0", backToParent(props.chunk.parentChunkId), "\xA0", props.chunk.relatedChunks ? /* @__PURE__ */ import_react6.default.createElement("p", null, uiRelatedChunks) : /* @__PURE__ */ import_react6.default.createElement("div", null), props.chunk.relatedChunks ? props.chunk.relatedChunks.map(mapRelated) : /* @__PURE__ */ import_react6.default.createElement("div", null), "\xA0");
@@ -32641,7 +32828,7 @@ You can check this by searching up for matching entries in a lockfile produced b
           let retrivedChunk = prom;
           if (retrivedChunk)
             setChunk(retrivedChunk);
-        }).catch((e) => {
+        }).catch((e2) => {
           setCalling(false);
           setCalled(true);
         });
@@ -32661,6 +32848,20 @@ You can check this by searching up for matching entries in a lockfile produced b
     } else
       return void 0;
   }
+
+  // src/reportWebVitals.ts
+  var reportWebVitals = (onPerfEntry) => {
+    if (onPerfEntry && onPerfEntry instanceof Function) {
+      Promise.resolve().then(() => (init_web_vitals(), web_vitals_exports)).then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+        getCLS(onPerfEntry);
+        getFID(onPerfEntry);
+        getFCP(onPerfEntry);
+        getLCP(onPerfEntry);
+        getTTFB(onPerfEntry);
+      });
+    }
+  };
+  var reportWebVitals_default = reportWebVitals;
 
   // src/App.tsx
   var fluidFillPageStyles = makeStyles2({
@@ -32726,9 +32927,10 @@ You can check this by searching up for matching entries in a lockfile produced b
   if (document !== void 0 && document.getElementById !== void 0) {
     const root = (0, import_client.createRoot)(document.getElementById("reactRoot"));
     root.render(
-      /* @__PURE__ */ import_react10.default.createElement(App, null)
+      /* @__PURE__ */ import_react10.default.createElement(import_react10.default.StrictMode, null, /* @__PURE__ */ import_react10.default.createElement(App, null))
     );
   }
+  reportWebVitals_default();
 })();
 /*! Bundled license information:
 
