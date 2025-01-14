@@ -32780,6 +32780,9 @@ You can check this by searching up for matching entries in a lockfile produced b
     return nodeWithKey;
   }
   function splitByNewlines(text) {
+    if (text.includes("\\n\\n")) {
+      return text.split("\\n\\n").filter((str) => str.trim().length > 0);
+    }
     if (text.includes("\n\n")) {
       return text.split("\n\n").filter((str) => str.trim().length > 0);
     }
