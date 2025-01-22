@@ -26188,18 +26188,24 @@ Source string: ${className}`);
               if (character2 === 123)
                 if (offset === 0)
                   parse(characters2, root, reference, reference, props, rulesets, length2, points, children);
-                else
-                  switch (atrule === 99 && charat(characters2, 3) === 110 ? 100 : atrule) {
-                    // d l m s
-                    case 100:
+                else {
+                  switch (atrule) {
+                    // c(ontainer)
+                    case 99:
+                      if (charat(characters2, 3) === 110) break;
+                    // l(ayer)
                     case 108:
+                      if (charat(characters2, 2) === 97) break;
+                    default:
+                      offset = 0;
+                    // d(ocument) m(edia) s(upports)
+                    case 100:
                     case 109:
                     case 115:
-                      parse(value, reference, reference, rule && append(ruleset(value, reference, reference, 0, 0, rules, points, type, rules, props = [], length2, children), children), rules, children, length2, points, rule ? props : children);
-                      break;
-                    default:
-                      parse(characters2, reference, reference, reference, [""], children, 0, points, children);
                   }
+                  if (offset) parse(value, reference, reference, rule && append(ruleset(value, reference, reference, 0, 0, rules, points, type, rules, props = [], length2, children), children), rules, children, length2, points, rule ? props : children);
+                  else parse(characters2, reference, reference, reference, [""], children, 0, points, children);
+                }
           }
           index = offset = property = 0, variable = ampersand = 1, type = characters2 = "", length2 = pseudo;
           break;
@@ -29301,6 +29307,12 @@ You can check this by searching up for matching entries in a lockfile produced b
     160: `#e8ebfa`
   };
 
+  // node_modules/@fluentui/tokens/lib/alias/teamsFontFamilies.js
+  var fontFamilies2 = {
+    ...fontFamilies,
+    fontFamilyBase: '-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+  };
+
   // node_modules/@fluentui/tokens/lib/alias/darkColorPalette.js
   var statusColorPaletteTokens = statusSharedColorNames.reduce((acc, sharedColor) => {
     const color = sharedColor.slice(0, 1).toUpperCase() + sharedColor.slice(1);
@@ -29558,7 +29570,10 @@ You can check this by searching up for matching entries in a lockfile produced b
   };
 
   // node_modules/@fluentui/tokens/lib/themes/teams/darkTheme.js
-  var teamsDarkTheme = createTeamsDarkTheme(brandTeams);
+  var teamsDarkTheme = {
+    ...createTeamsDarkTheme(brandTeams),
+    ...fontFamilies2
+  };
 
   // node_modules/@fluentui/react-provider/lib/components/FluentProvider/useFluentProvider.js
   var React27 = __toESM(require_react());
