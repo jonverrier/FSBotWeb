@@ -9,13 +9,8 @@
    "scripts": {
       "clean": "echo",
       "build": "npm run compile && npm run pull",
-<<<<<<< HEAD
-      "pull": "bash -c 'cp -v ../Braid/Boxer/dist/boxer.min.js public/assets/js && cp -v ../Braid/WaterfallBrowser/dist/waterfall.min.js public/assets/js'",
-      "compile": "npx esbuild src/main.js --outfile=public/assets/js/main.min.js --minify --sourcemap --bundle",
-=======
-      "pull": "bash -c 'cp -v ../Studio/Boxer/dist/boxer.pack.js public/assets/js && cp -v ../Studio/WaterfallBrowser/dist/waterfall.pack.js public/assets/js'",
+      "pull": "bash -c 'cp -v ../Studio/Boxer/dist/boxer.min.js public/assets/js && cp -v ../Studio/WaterfallBrowser/dist/waterfall.min.js public/assets/js'",
       "compile": "npx esbuild src/main.js --outfile=public/assets/js/main.pack.js --bundle",
->>>>>>> develop
       "local-server": "node ./local-web.js"
    },
    "devDependencies": {
