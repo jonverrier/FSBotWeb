@@ -10,7 +10,7 @@
       "clean": "echo",
       "build": "npm run compile && npm run pull",
       "pull": "bash -c 'cp -v ../Studio/Boxer/dist/boxer.min.js public/assets/js && cp -v ../Studio/WaterfallBrowser/dist/waterfall.min.js public/assets/js'",
-      "compile": "npx esbuild src/main.js --outfile=public/assets/js/main.pack.js --bundle",
+      "compile": "npx esbuild src/main.js --outfile=public/assets/js/main.min.js --bundle --minify",
       "local-server": "node ./local-web.js"
    },
    "devDependencies": {
