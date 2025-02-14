@@ -16,7 +16,7 @@ The benefits of this approach are:
 - It is simple to maintain content, given that the field is moving so rapidly. Traditional approaches of generating bespoke new content are often obsolete by the time they are ready. 
 - Participants get a flavour of what is possible with modern AI by using the tools. 
 
-** Waterfall ** is a Python framework designed for processing documents using an AI enrichment pipeline. It automates document processing, enrichment, and analysis. The system is primarily focused on curated educational content related to AI/ML.
+** Waterfall ** is a Python framework designed for processing documents using an AI enrichment pipeline. It automates document processing, enrichment, and analysis. 
 
 The framework is composed of two main pipelines:
 
